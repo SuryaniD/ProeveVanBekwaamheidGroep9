@@ -233,6 +233,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5844376d0e5ef4db6fb288b8ca771f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MapTileSet1: []
+  MapTileSet2: []
+  MapTileSet3: []
+  MapTileSet4: []
+  MapTileSet5: []
+  MapTileSet6: []
+  MapTileSet7: []
+  MapTileSet8: []
+  MapTileSet9: []
   TileLocations: []
   MadeMap: {fileID: 0}
 --- !u!4 &1351403175
