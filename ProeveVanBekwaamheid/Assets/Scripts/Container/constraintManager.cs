@@ -7,10 +7,13 @@ using UnityEngine;
 public class constraintManager : MonoBehaviour
 {
     private Rigidbody rigidBody;
+    private bool stackedObject;
+    private int destroyTimer = 10;
 
     void Awake()
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
+        stackedObject = false;
     }
 
     void OnCollisionEnter(Collision collider)
@@ -24,6 +27,14 @@ public class constraintManager : MonoBehaviour
             /*the code for rotation constraints is repeated multiple times because whenever a new line is executed where constrains are enabled, it disables the constraints done in a previous
               line of code.*/  
             rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+            stackedObject = true;
+        }
+
+       if (collider.gameObject.tag.Equals("Ground") && stackedObject == true)
+        {
+            //If a container stacked on another container falls to the ground, it'll despawn after 10 seconds
+            rigidBody.constraints = RigidbodyConstraints.FreezeRotationX;
+            Destroy(gameObject, destroyTimer);
         }
 
     }
@@ -33,6 +44,7 @@ public class constraintManager : MonoBehaviour
         //when no collision is made, all the other contraints reset, besides the two rotations
         rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
     }
+
 }
 
 
