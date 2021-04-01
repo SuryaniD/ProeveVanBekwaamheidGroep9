@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Suryani
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class LevelCountdown : MonoBehaviour
     private int minutes = 0;
     private int seconds = 0;
     private float initializationTime;
+    public float remainingtime;
 
     void Start()
     {
@@ -33,6 +35,8 @@ public class LevelCountdown : MonoBehaviour
             CountdownAsset.GetComponent<Text>().text = "Tijd is op!";
             //Has to be changed to change scenes
         }
+
+        remainingtime = totaltime;
 
     }
 
