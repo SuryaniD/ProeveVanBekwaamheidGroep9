@@ -6,11 +6,11 @@ public class Score : MonoBehaviour
 {
     public float CurrentScore;
 
-    //Get-set
+    //Get-set from LevelCountdown Script
     public float RemTime;
 
-    //Get-set 
-    public int EnemiesDead;
+    //Get-set from EnemyAI Script
+    public int EnemyDead;
 
     void Start()
     {
@@ -20,6 +20,16 @@ public class Score : MonoBehaviour
  
     void Update()
     {
+        //RemTime = gameObject.GetComponent<LevelCountdown>().RemainingTime;
+        //EnemyDead = gameObject.GetComponent<EnemyAI>().EnemiesDead;
+
+        //RemTime for every second left +10 score
         
+
+        //EnemyDead for every Enemy dead +35 score
+
+
+
+
     }
 }
