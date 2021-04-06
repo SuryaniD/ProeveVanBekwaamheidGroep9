@@ -8,27 +8,31 @@ public class WaterCanon : MonoBehaviour
 {
     [SerializeField] private GameObject Boat;
     [SerializeField] private GameObject WaterHose;
-    [SerializeField] private GameObject Ball;
+    [SerializeField] private GameObject SprayPrefab;
     [SerializeField] private Vector2 minMaxYaw;
     [SerializeField] private Vector2 minMaxPitch;
     [SerializeField] private Vector2 speedYawPitch;
 
-    private Vector3 bulletOffst = new Vector3(1, 0, 0);
+    private GameObject spray;
+    private Vector3 bulletOffst = new Vector3(1.5f, 0, 0);
     private int Velocity;
     private bool IsFiring { get; set; }
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Place spray at the end of the gun
+        Vector3 pos = WaterHose.transform.position;
+        Vector3 ofst = WaterHose.transform.forward * bulletOffst.x + WaterHose.transform.right * bulletOffst.y + WaterHose.transform.up * bulletOffst.z;
+        pos = pos + ofst;
+        spray = Instantiate(SprayPrefab, pos, WaterHose.transform.rotation, WaterHose.transform);
+        spray.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("f")) 
-        {
-            Shoot();
-        }
+        //Needs to be changed to be controlled with controllers script
+        if (Input.GetKeyDown("f")) Shoot();
         if (Input.GetKey("a")) turnYaw(-1);
         if (Input.GetKey("d")) turnYaw(1);
         if (Input.GetKey("w")) turnPitch(-1);
@@ -73,13 +77,6 @@ public class WaterCanon : MonoBehaviour
 
     void Shoot()
     {
-        // Place bullet at the end of the gun
-        Vector3 pos = WaterHose.transform.position;
-        Vector3 ofst = WaterHose.transform.forward * bulletOffst.x + WaterHose.transform.right * bulletOffst.y + WaterHose.transform.up * bulletOffst.z;
-        pos = pos + ofst;
-
-        // Instantiate bullet
-        Instantiate(Ball, pos, WaterHose.transform.rotation);
-
+        spray.SetActive(!spray.activeSelf);
     }
 }
