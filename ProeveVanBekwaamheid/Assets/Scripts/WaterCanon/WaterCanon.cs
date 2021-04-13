@@ -8,13 +8,19 @@ public class WaterCanon : MonoBehaviour
 {
     [SerializeField] private GameObject Boat;
     [SerializeField] private GameObject WaterHose;
+    [SerializeField] private GameObject WaterBullet;
     [SerializeField] private GameObject SprayPrefab;
     [SerializeField] private Vector2 minMaxYaw;
     [SerializeField] private Vector2 minMaxPitch;
     [SerializeField] private Vector2 speedYawPitch;
+    [SerializeField] private float bulletSpawnDelta = 0.1f;
+    [SerializeField] private float bulletSpeed = 10f;
 
     private GameObject spray;
-    private Vector3 bulletOffst = new Vector3(1.5f, 0, 0);
+    private Vector3 sprayOffst = new Vector3(1.5f, 0, 0);
+    private Queue<GameObject> bullets = new Queue<GameObject>();
+    private Vector3 bulletOffst = new Vector3(1, 0, 0); 
+    private double lastSpawnTime = 0;
     private int Velocity;
     private bool IsFiring { get; set; }
     // Start is called before the first frame update
@@ -22,7 +28,7 @@ public class WaterCanon : MonoBehaviour
     {
         // Place spray at the end of the gun
         Vector3 pos = WaterHose.transform.position;
-        Vector3 ofst = WaterHose.transform.forward * bulletOffst.x + WaterHose.transform.right * bulletOffst.y + WaterHose.transform.up * bulletOffst.z;
+        Vector3 ofst = WaterHose.transform.forward * sprayOffst.x + WaterHose.transform.right * sprayOffst.y + WaterHose.transform.up * sprayOffst.z;
         pos = pos + ofst;
         spray = Instantiate(SprayPrefab, pos, WaterHose.transform.rotation, WaterHose.transform);
         spray.SetActive(false);
@@ -37,6 +43,31 @@ public class WaterCanon : MonoBehaviour
         if (Input.GetKey("d")) turnYaw(1);
         if (Input.GetKey("w")) turnPitch(-1);
         if (Input.GetKey("s")) turnPitch(1);
+
+        // Water bullets
+        if (spray.activeSelf)
+        {
+            if (Time.realtimeSinceStartup - lastSpawnTime > bulletSpawnDelta)
+            {
+                // Place bullet at the end of the gun
+                Vector3 pos = WaterHose.transform.position;
+                Vector3 ofst = WaterHose.transform.forward * bulletOffst.x + WaterHose.transform.right * bulletOffst.y + WaterHose.transform.up * bulletOffst.z;
+                pos = pos + ofst;
+                GameObject bullet = Instantiate(WaterBullet, pos, WaterHose.transform.rotation);
+                bullet.GetComponent<Rigidbody>().AddForce(WaterHose.transform.forward * bulletSpeed);
+                bullets.Enqueue(bullet);
+                // Update time
+                lastSpawnTime = Time.realtimeSinceStartup;
+            }
+
+        } else
+        {
+            while (bullets.Count > 0)
+            {
+                GameObject bullet = bullets.Dequeue();
+                if (bullet != null) Destroy(bullet);
+            }
+        }
     }
 
     void turnYaw(short dir)

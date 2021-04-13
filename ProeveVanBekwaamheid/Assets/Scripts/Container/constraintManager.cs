@@ -29,11 +29,18 @@ public class constraintManager : MonoBehaviour
             rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
             stackedObject = true;
         }
+        if (collider.gameObject.tag.Equals("Ground") == true)
+          {
+            rigidBody.mass = 1000;
+            
+        }
 
-       if (collider.gameObject.tag.Equals("Ground") && stackedObject == true)
+            if (collider.gameObject.tag.Equals("Ground") && stackedObject == true)
         {
+
             //If a container stacked on another container falls to the ground, it'll despawn after 10 seconds
             rigidBody.constraints = RigidbodyConstraints.FreezeRotationX;
+            rigidBody.mass = 25;
             Destroy(gameObject, destroyTimer);
         }
 
