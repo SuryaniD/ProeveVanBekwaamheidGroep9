@@ -27,13 +27,12 @@ public class PredictedProjectile : MonoBehaviour
     void fireProjectile()
     {
         //Calcutates the position of the mouse in the game world
-        Ray camRay = cam.ScreenPointToRay(Input.mousePosition);
+        Ray CamRay = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
 
-        if (Physics.Raycast(camRay, out hit, 100f, layer))
-        {
-            Debug.Log("true");
+        if (Physics.Raycast(CamRay, out hit, 100f, layer))
+        { 
             predictedPosition.SetActive(true);
             //Makes the predictPosition follow the mouse 
             predictedPosition.transform.position = hit.point + Vector3.up * 0.1f;
