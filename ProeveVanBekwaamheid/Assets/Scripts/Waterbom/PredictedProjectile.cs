@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PredictedProjectile : MonoBehaviour
 {
-
+    public Transform firePoint;
     public Rigidbody bullet;
     public GameObject predictedPosition;
     public LayerMask layer;
@@ -38,18 +38,19 @@ public class PredictedProjectile : MonoBehaviour
             predictedPosition.transform.position = hit.point + Vector3.up * 0.1f;
 
             Vector3 Vo = CalculateVelocity(hit.point, transform.position, 1f);
-
             transform.rotation = Quaternion.LookRotation(Vo);
-
             if (Input.GetMouseButtonDown(0))
             {
-                
+                Rigidbody obj = Instantiate(bullet, firePoint.position, Quaternion.identity);
+                obj.velocity = Vo;
             }
+           
         }
     }
 
     Vector3 CalculateVelocity(Vector3 target, Vector3 origin, float time)
     {
+        //Defines the distance x and y
         Vector3 distance = target - origin;
         Vector3 distanceXZ = distance;
         distanceXZ.y = 0f;
