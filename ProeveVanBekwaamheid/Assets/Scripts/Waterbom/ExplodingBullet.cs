@@ -14,7 +14,7 @@ public class ExplodingBullet : MonoBehaviour
         //GameObject explodingObject = Instantiate(explodableObject, transform.position, transform.rotation);
         //Destroy(explodableObject, 3);
         knockBack();
-       Destroy(gameObject);     
+        Destroy(gameObject);     
     }
 
     void knockBack()
