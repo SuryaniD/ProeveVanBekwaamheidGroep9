@@ -37,7 +37,7 @@ public class PredictedProjectile : MonoBehaviour
             //Makes the predictPosition follow the mouse 
             predictedPosition.transform.position = hit.point + Vector3.up * 0.1f;
 
-            Vector3 Vo = CalculateVelocity(hit.point, transform.position, 1f);
+            Vector3 Vo = calculateVelocity(hit.point, transform.position, 1f);
             transform.rotation = Quaternion.LookRotation(Vo);
             if (Input.GetMouseButtonDown(0))
             {
@@ -48,7 +48,7 @@ public class PredictedProjectile : MonoBehaviour
         }
     }
 
-    Vector3 CalculateVelocity(Vector3 target, Vector3 origin, float time)
+    Vector3 calculateVelocity(Vector3 target, Vector3 origin, float time)
     {
         //Defines the distance x and y
         Vector3 distance = target - origin;
