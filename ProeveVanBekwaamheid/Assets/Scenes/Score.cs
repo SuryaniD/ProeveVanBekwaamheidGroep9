@@ -26,7 +26,7 @@ public class Score : MonoBehaviour
     void Update()
     {
         //Get values from other scripts script = <>
-        RemTime = ScriptManager.GetComponent<LevelCountdown>().remainingtime;
+     //   RemTime = ScriptManager.GetComponent<LevelCountdown>().remainingtime;
       //  EnemyDead = ScriptManager.GetComponent<EnemyAI>().EnemiesDead;
 
         //RemTime for every second left +10 score
