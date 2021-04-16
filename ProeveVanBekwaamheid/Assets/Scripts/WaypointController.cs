@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Dexter Krijgsman
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +7,9 @@ public class WaypointController : MonoBehaviour
 {
     public List<Transform> waypoints = new List<Transform>();
     private Transform targetWaypoint;
+    private int lastWaypointIndex;
     private int targetWaypointIndex = 0;
     private float minDistance = 0.1f;
-    private int lastWaypointIndex;
 
     [SerializeField]
     private float movementSpeed = 3.0f;
@@ -50,6 +51,7 @@ public class WaypointController : MonoBehaviour
 
     void UpdateTargetWaypoint()
     {
+        //This if statement checks if the AI has reached the end of the waypoints and then set's the next waypoint to the first "index[0]"
         if (targetWaypointIndex > lastWaypointIndex)
         {
             targetWaypointIndex = 0;
