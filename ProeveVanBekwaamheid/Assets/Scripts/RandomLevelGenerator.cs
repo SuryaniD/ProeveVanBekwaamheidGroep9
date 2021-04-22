@@ -1,38 +1,38 @@
-﻿using System.Collections;
+﻿//Tim
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomLevelGenerator : MonoBehaviour
+public class randomLevelGenerator : MonoBehaviour
 {
-    //Tim Gijzen
     //MapTile list for premade tiles(specific prebuild mapparts for specific locations)
-    public GameObject[] MapTileSet1;
-    public GameObject[] MapTileSet2;
-    public GameObject[] MapTileSet3;
-    public GameObject[] MapTileSet4;
-    public GameObject[] MapTileSet5;
-    public GameObject[] MapTileSet6;
-    public GameObject[] MapTileSet7;
-    public GameObject[] MapTileSet8;
-    public GameObject[] MapTileSet9;
+    public GameObject[] mapTileSet1;
+    public GameObject[] mapTileSet2;
+    public GameObject[] mapTileSet3;
+    public GameObject[] mapTileSet4;
+    public GameObject[] mapTileSet5;
+    public GameObject[] mapTileSet6;
+    public GameObject[] mapTileSet7;
+    public GameObject[] mapTileSet8;
+    public GameObject[] mapTileSet9;
 
     //Location where object spawns(placed empty object for vector3)
-    public GameObject[] TileLocations;
+    public GameObject[] tileLocations;
 
     //Final Map
-    public GameObject MadeMap;
+    public GameObject madeMap;
 
     void Start()
     {    
         // Spawns Maptile - select out list random - set on specified location by empty object(placed in game) - adds to mademap as child
-        Instantiate(MapTileSet1[Random.Range(1, 4)], TileLocations[0].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = MadeMap.transform;
-        Instantiate(MapTileSet2[Random.Range(1, 4)], TileLocations[1].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = MadeMap.transform;
-        Instantiate(MapTileSet3[Random.Range(1, 4)], TileLocations[2].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = MadeMap.transform;
-        Instantiate(MapTileSet4[Random.Range(1, 4)], TileLocations[3].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = MadeMap.transform;
-        Instantiate(MapTileSet5[Random.Range(1, 4)], TileLocations[4].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = MadeMap.transform;
-        Instantiate(MapTileSet6[Random.Range(1, 4)], TileLocations[5].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = MadeMap.transform;
-        Instantiate(MapTileSet7[Random.Range(1, 4)], TileLocations[6].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = MadeMap.transform;
-        Instantiate(MapTileSet8[Random.Range(1, 4)], TileLocations[7].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = MadeMap.transform;
-        Instantiate(MapTileSet9[Random.Range(1, 4)], TileLocations[8].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = MadeMap.transform;
+        Instantiate(mapTileSet1[Random.Range(1, 4)], tileLocations[0].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = madeMap.transform;
+        Instantiate(mapTileSet2[Random.Range(1, 4)], tileLocations[1].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = madeMap.transform;
+        Instantiate(mapTileSet3[Random.Range(1, 4)], tileLocations[2].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = madeMap.transform;
+        Instantiate(mapTileSet4[Random.Range(1, 4)], tileLocations[3].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = madeMap.transform;
+        Instantiate(mapTileSet5[Random.Range(1, 4)], tileLocations[4].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = madeMap.transform;
+        Instantiate(mapTileSet6[Random.Range(1, 4)], tileLocations[5].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = madeMap.transform;
+        Instantiate(mapTileSet7[Random.Range(1, 4)], tileLocations[6].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = madeMap.transform;
+        Instantiate(mapTileSet8[Random.Range(1, 4)], tileLocations[7].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = madeMap.transform;
+        Instantiate(mapTileSet9[Random.Range(1, 4)], tileLocations[8].transform.position, Quaternion.Euler(-90, 0, 0)).transform.parent = madeMap.transform;
     }
 }
