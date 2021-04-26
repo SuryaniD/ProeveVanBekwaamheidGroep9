@@ -5,8 +5,18 @@ using UnityEngine;
 public class testMove : MonoBehaviour
 {
     int speed = 10;
-        
-        public void Update()
+    public GameObject predictedPosition;
+    public LayerMask layer;
+
+    private Camera cam;
+
+    void Start()
+    {
+        cam = Camera.main;
+    }
+
+
+    public void Update()
         {
         if (Input.GetKey(KeyCode.W))
         {
@@ -16,6 +26,17 @@ public class testMove : MonoBehaviour
         {
             transform.position += Vector3.down * speed * Time.deltaTime;
         }
-    }
-    }
 
+        Ray CamRay = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+
+        if (Physics.Raycast(CamRay, out hit, 100f, layer))
+        {
+            predictedPosition.SetActive(true);
+            //Makes the predictPosition follow the mouse 
+            predictedPosition.transform.position = hit.point + Vector3.up * 0.1f;
+
+        }
+    }
+    }
