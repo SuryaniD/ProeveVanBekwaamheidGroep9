@@ -59,4 +59,12 @@ public class WaypointController : MonoBehaviour
 
         targetWaypoint = waypoints[targetWaypointIndex];
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Container")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

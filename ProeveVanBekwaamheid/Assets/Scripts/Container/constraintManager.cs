@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //The point of this script is to alter how the container behaves depending on what it collides with.
-public class ConstraintManager : MonoBehaviour
+public class constraintManager : MonoBehaviour
 {
     private Rigidbody rigidBody;
     private bool stackedObject;
