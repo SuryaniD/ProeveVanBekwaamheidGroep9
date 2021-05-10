@@ -1,12 +1,12 @@
-﻿using System.Collections;
+﻿//toon
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ammoManager : MonoBehaviour
 {
-    int ammo = 5;
+   public int ammo = 5;
 
-    GameObject gameObject;
     // Update is called once per frame
     void Update()
     {
@@ -17,8 +17,12 @@ public class ammoManager : MonoBehaviour
 
         if(ammo == 0)
         {
-            Debug.Log("disabled");
             GetComponent<PredictedProjectile>().enabled = false;
         }
+    }
+
+    public void ammoRefill()
+    {
+        ammo = ammo + 5;
     }
 }
