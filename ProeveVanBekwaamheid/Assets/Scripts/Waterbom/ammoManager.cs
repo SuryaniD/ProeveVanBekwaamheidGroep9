@@ -13,12 +13,15 @@ public class ammoManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ammo = ammo - 1;
+            if(ammo < 0)
+            {
+                ammo = 0;
+            }
         }
 
         if(ammo == 0)
         {
             GetComponent<PredictedProjectile>().enabled = false;
-            GetComponent<ammoManager>().enabled = false;
         }
         
     }

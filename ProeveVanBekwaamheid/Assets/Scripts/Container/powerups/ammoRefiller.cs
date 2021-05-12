@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class ammoRefiller : MonoBehaviour
 {
-    private ammoManager ammoManager;
+    private GameObject finder;
     // Update is called once per frame
-    private void OnCollisionEnter(Collision collider)
+    void OnCollisionEnter(Collision collider)
     {
         if (collider.gameObject.tag.Equals("Ground") == true)
         {
-            GetComponent<PredictedProjectile>().enabled = true;
-            GetComponent<ammoManager>().enabled = true;
-            ammoManager.ammo = ammoManager.ammo + 5;
+            GameObject.FindGameObjectWithTag("WaterCanon").GetComponent<PredictedProjectile>().enabled = true;
+            GameObject.FindGameObjectWithTag("WaterCanon").GetComponent<ammoManager>();
+
+            if (ammoManager.ammo == 5)
+            {
+                ammoManager.ammo = ammoManager.ammo + 0;
+            }
+            else
+            {
+                ammoManager.ammo = ammoManager.ammo + 5;
+            }
         }
     }
 }
