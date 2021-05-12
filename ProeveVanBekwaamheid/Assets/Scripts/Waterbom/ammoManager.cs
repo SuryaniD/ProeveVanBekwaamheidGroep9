@@ -18,11 +18,8 @@ public class ammoManager : MonoBehaviour
         if(ammo == 0)
         {
             GetComponent<PredictedProjectile>().enabled = false;
+            GetComponent<ammoManager>().enabled = false;
         }
-    }
-
-    public void ammoRefill()
-    {
-        ammo = ammo + 5;
+        
     }
 }

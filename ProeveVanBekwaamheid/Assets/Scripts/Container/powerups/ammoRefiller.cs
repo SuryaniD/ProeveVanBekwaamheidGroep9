@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ammoRefiller : MonoBehaviour
 {
-
-    private GameObject gameObject;
+    private ammoManager ammoManager;
     // Update is called once per frame
     private void OnCollisionEnter(Collision collider)
     {
         if (collider.gameObject.tag.Equals("Ground") == true)
         {
-            gameObject.GetComponent<ammoManager>().ammoRefill();
-
+            GetComponent<PredictedProjectile>().enabled = true;
+            GetComponent<ammoManager>().enabled = true;
+            ammoManager.ammo = ammoManager.ammo + 5;
         }
     }
 }
