@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ammoManager : MonoBehaviour
 {
-   public int ammo = 5;
+   public static int ammo = 5;
 
     // Update is called once per frame
     void Update()
