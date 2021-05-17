@@ -3,40 +3,62 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelCountdown : MonoBehaviour
 {
 
     [SerializeField]private GameObject CountdownAsset;
-    private float totaltime = 300f;
+    [SerializeField] private float countdownTime = 10f;
+    private float currCountdown = 10f;
     private int minutes = 0;
     private int seconds = 0;
     private float initializationTime;
     public float remainingtime;
+    [SerializeField] private int score = 0;
 
     void Start()
     {
+        currCountdown = countdownTime;
         //To check if new level loaded/generated
         initializationTime = Time.timeSinceLevelLoad;
     }
+
+    private void LoadScene(string HighscoreCredits)
+    {
+        // Get Score
+        score = int.Parse(GameObject.Find("Score").GetComponent<Text>().text.Substring(7));
+        // Hook onLoad
+        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+        // Load Next Scene
+        SceneManager.LoadScene(HighscoreCredits);
+    }
+
+    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        // Load score into leaderboard script
+        GameObject.Find("Main Camera").GetComponent<LeadboardManager>().score = score;
+    }
+
     private void Timing()
     {
         float timeSinceInitialization = Time.timeSinceLevelLoad - initializationTime;
 
-        minutes = Mathf.FloorToInt(totaltime / 60f);
-        seconds = Mathf.FloorToInt(totaltime % 60f);
+        minutes = Mathf.FloorToInt(currCountdown / 60f);
+        seconds = Mathf.FloorToInt(currCountdown % 60f);
         CountdownAsset.GetComponent<Text>().text = minutes.ToString("00") + ":" + seconds.ToString("00");
-        if (totaltime > 0f) 
+        if (currCountdown > 0f) 
         {
-            totaltime = 300f - timeSinceInitialization;
+            currCountdown = countdownTime - timeSinceInitialization;
         }
         else
         {
             CountdownAsset.GetComponent<Text>().text = "Tijd is op!";
-            //Has to be changed to change scenes
+            LoadScene("HighscoreCredits");
+
         }
 
-        remainingtime = totaltime;
+        remainingtime = currCountdown;
 
     }
 
@@ -45,4 +67,6 @@ public class LevelCountdown : MonoBehaviour
     {
         Timing();
     }
+
+   
 }
