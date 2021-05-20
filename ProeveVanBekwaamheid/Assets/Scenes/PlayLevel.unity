@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6771301, g: 0.77147096, b: 0.8756459, a: 1}
+  m_IndirectSpecularColor: {r: 0.6771304, g: 0.77147126, b: 0.8756448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -327,10 +327,11 @@ MonoBehaviour:
   colliderHoldingList: []
   moreCollider: {fileID: 6232793082685248946}
   addMaterials:
-  - {fileID: 2100000, guid: 1df9a8025a95f466981c1183c06347f4, type: 2}
-  - {fileID: 2100000, guid: 453070298b53e4bd7ba4abf7d0c81176, type: 2}
-  - {fileID: 2100000, guid: 4b558970e453e4034b187bf17b281da5, type: 2}
-  - {fileID: 2100000, guid: 76867f3e0c4f845279cee68498b5bd1b, type: 2}
+  - {fileID: 2100000, guid: 00e583a24bc2a47bea81682710b8d1b1, type: 2}
+  - {fileID: 2100000, guid: 77d8a2ebab0844841acb7b462de24b28, type: 2}
+  - {fileID: 2100000, guid: 083d5f914cd3a45adaf03ad28e18fdf8, type: 2}
+  - {fileID: 2100000, guid: fe14bd03af0144833831fe3f7186ae3f, type: 2}
+  - {fileID: 2100000, guid: 8235230b7bf99430688979399cf7ddf4, type: 2}
 --- !u!4 &89688601
 Transform:
   m_ObjectHideFlags: 0
