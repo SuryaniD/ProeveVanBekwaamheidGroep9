@@ -334,6 +334,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552ee928619ca78488cfa89651b3d8b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1315590498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315590490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1515353196
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86a598195fecf54a8ba2e39d591d98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 5
 --- !u!1 &1904356621
 GameObject:
   m_ObjectHideFlags: 0

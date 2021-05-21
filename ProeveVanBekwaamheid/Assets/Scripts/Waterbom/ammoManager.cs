@@ -7,7 +7,6 @@ public class ammoManager : MonoBehaviour
 {
    public static int ammo = 5;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
