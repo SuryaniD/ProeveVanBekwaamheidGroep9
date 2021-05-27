@@ -28,7 +28,7 @@ public class WaypointController : MonoBehaviour
     {
         float movementStep = movementSpeed * Time.deltaTime;
         float rotationStep = rotationSpeed * Time.deltaTime;
-
+        
         Vector3 directionToTarget = targetWaypoint.position - transform.position;
         Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
 
