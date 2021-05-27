@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6771304, g: 0.77147126, b: 0.8756448, a: 1}
+  m_IndirectSpecularColor: {r: 0.6771301, g: 0.77147096, b: 0.8756459, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -194,6 +194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piraat_ani1Prefab (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
@@ -944,6 +949,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piraat_ani1Prefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
       propertyPath: m_RootOrder
@@ -1267,6 +1277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piraat_ani1Prefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
@@ -2528,6 +2543,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piraat_ani1Prefab (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
       propertyPath: m_RootOrder
@@ -2924,6 +2944,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piraat_ani1Prefab (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
       propertyPath: m_RootOrder
@@ -3034,6 +3059,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piraat_ani1Prefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
       propertyPath: m_RootOrder
@@ -3130,6 +3160,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782566572154918099, guid: b2b79c03b63b4c140a5ef8c83cd0271f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782566572154918099, guid: b2b79c03b63b4c140a5ef8c83cd0271f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782566572154918099, guid: b2b79c03b63b4c140a5ef8c83cd0271f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1782566572154918099, guid: b2b79c03b63b4c140a5ef8c83cd0271f,
         type: 3}
@@ -3797,6 +3842,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piraat_ani1Prefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
       propertyPath: m_RootOrder
@@ -4047,6 +4097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piraat_ani1Prefab (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
@@ -5146,6 +5201,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piraat_ani1Prefab (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
       propertyPath: m_RootOrder
@@ -6065,6 +6125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piraat_ani1Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567354883496016628, guid: 479372c0aeda945b08dc185e1dee3ded,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2948383339181285454, guid: 479372c0aeda945b08dc185e1dee3ded,
         type: 3}
