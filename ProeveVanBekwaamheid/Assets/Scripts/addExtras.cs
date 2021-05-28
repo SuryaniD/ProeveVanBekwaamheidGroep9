@@ -33,8 +33,12 @@ public class addExtras : MonoBehaviour
               //  allContainers[i].transform.parent = colliderHoldingList[i].transform;
             //Gives allContainers a random material (addMaterials x4)
             allContainers[i].GetComponent<MeshRenderer>().material = addMaterials[Random.Range(0, 5)];
-            allChilds[i].transform.parent = null;
+           
         }
-    }
+        for (int j = 0; j < allChilds.Length; j++)
+        {
+            allChilds[j].transform.parent = null;
+        }
+        }
     
 }
