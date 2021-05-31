@@ -64,6 +64,7 @@ public class WaypointController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Container")
         {
+           
             Destroy(this.gameObject);
         }
     }
