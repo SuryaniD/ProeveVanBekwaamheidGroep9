@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -309,6 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 89688601}
   - component: {fileID: 89688600}
+  - component: {fileID: 89688602}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -352,6 +353,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89688602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89688599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbc4970a74a34385bf17a12cfedaf8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterCanon: {fileID: 870844923}
+  CraneMovement: {fileID: 138190974}
 --- !u!1 &93913329
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +721,7 @@ PrefabInstance:
     - target: {fileID: 6455362094464217814, guid: ba59c077c99714a4a8c7d68f4dd5eff9,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6455362094464217815, guid: ba59c077c99714a4a8c7d68f4dd5eff9,
         type: 3}
@@ -765,6 +780,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba59c077c99714a4a8c7d68f4dd5eff9, type: 3}
+--- !u!114 &138190974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6455362094464217814, guid: ba59c077c99714a4a8c7d68f4dd5eff9,
+    type: 3}
+  m_PrefabInstance: {fileID: 138190973}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ab56a800184a54faa1cc4302cc21aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &149648226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3432,6 +3459,7 @@ MonoBehaviour:
   bulletSpawnDelta: 0.1
   bulletSpeed: 800
   sprayOffst: {x: 1.5, y: 0, z: 0}
+  waterControlsActive: 0
 --- !u!1 &876238786
 GameObject:
   m_ObjectHideFlags: 0
