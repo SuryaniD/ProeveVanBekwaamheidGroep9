@@ -20,6 +20,8 @@ public class craneMovement : MonoBehaviour
     [SerializeField] private float winchMin = 20f, winchMax = 5000f;
     private float ropeLength;
 
+    public bool craneControlsActive = false;
+
     private void Start()
     {
         ropeLength = Rope.transform.localScale.z;
@@ -29,14 +31,14 @@ public class craneMovement : MonoBehaviour
     void Update()
     {
         //Placeholder, needs to be controlled with controller script
-        if (Input.GetKey("w")) boomLift(1);
-        if (Input.GetKey("s")) boomLift(-1);
-        if (Input.GetKey("a")) rotateCrane(-1);
-        if (Input.GetKey("d")) rotateCrane(1);
-        if (Input.GetKey("q")) winch(1);
-        if (Input.GetKey("e")) winch(-1);
-        if (Input.GetKey("x")) boomExtension(1);
-        if (Input.GetKey("z")) boomExtension(-1);
+        if (Input.GetKey("w") && craneControlsActive == true) boomLift(1);
+        if (Input.GetKey("s") && craneControlsActive == true) boomLift(-1);
+        if (Input.GetKey("a") && craneControlsActive == true) rotateCrane(-1);
+        if (Input.GetKey("d") && craneControlsActive == true) rotateCrane(1);
+        if (Input.GetKey("q") && craneControlsActive == true) winch(1);
+        if (Input.GetKey("e") && craneControlsActive == true) winch(-1);
+        if (Input.GetKey("x") && craneControlsActive == true) boomExtension(1);
+        if (Input.GetKey("z") && craneControlsActive == true) boomExtension(-1);
     }
 
     void boomExtension(short dir)
