@@ -15,9 +15,9 @@ public class WaterCanon : MonoBehaviour
     [SerializeField] private Vector2 speedYawPitch;
     [SerializeField] private float bulletSpawnDelta = 0.1f;
     [SerializeField] private float bulletSpeed = 10f;
+    [SerializeField] private Vector3 sprayOffst = new Vector3(1.5f, 0, 0);
 
     private GameObject spray;
-    private Vector3 sprayOffst = new Vector3(1.5f, 0, 0);
     private Queue<GameObject> bullets = new Queue<GameObject>();
     private Vector3 bulletOffst = new Vector3(1, 0, 0); 
     private double lastSpawnTime = 0;

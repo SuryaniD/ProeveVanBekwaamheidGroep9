@@ -7,6 +7,8 @@ TagManager:
   - Container
   - WaterCanon
   - Ground
+  - Unchild
+  - Enemy
   layers:
   - Default
   - TransparentFX
