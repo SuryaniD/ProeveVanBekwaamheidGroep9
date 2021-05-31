@@ -15,7 +15,12 @@ ModelImporter:
   - first:
       74: -2861340925227477554
     second: Stunned
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 98df178cfecf7894d85cfbfe63c36c03, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
