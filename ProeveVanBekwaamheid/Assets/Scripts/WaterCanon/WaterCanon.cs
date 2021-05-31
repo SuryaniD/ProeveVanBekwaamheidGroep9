@@ -15,14 +15,17 @@ public class WaterCanon : MonoBehaviour
     [SerializeField] private Vector2 speedYawPitch;
     [SerializeField] private float bulletSpawnDelta = 0.1f;
     [SerializeField] private float bulletSpeed = 10f;
+    [SerializeField] private Vector3 sprayOffst = new Vector3(1.5f, 0, 0);
 
     private GameObject spray;
-    private Vector3 sprayOffst = new Vector3(1.5f, 0, 0);
     private Queue<GameObject> bullets = new Queue<GameObject>();
     private Vector3 bulletOffst = new Vector3(1, 0, 0); 
     private double lastSpawnTime = 0;
     private int Velocity;
     private bool IsFiring { get; set; }
+
+    public bool waterControlsActive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +41,11 @@ public class WaterCanon : MonoBehaviour
     void Update()
     {
         //Needs to be changed to be controlled with controllers script
-        if (Input.GetKeyDown("f")) Shoot();
-        if (Input.GetKey("a")) turnYaw(-1);
-        if (Input.GetKey("d")) turnYaw(1);
-        if (Input.GetKey("w")) turnPitch(-1);
-        if (Input.GetKey("s")) turnPitch(1);
+        if (Input.GetKeyDown("f") && waterControlsActive == true) Shoot();
+        if (Input.GetKey("a") && waterControlsActive == true) turnYaw(-1);
+        if (Input.GetKey("d") && waterControlsActive == true) turnYaw(1);
+        if (Input.GetKey("w") && waterControlsActive == true) turnPitch(-1);
+        if (Input.GetKey("s") && waterControlsActive == true) turnPitch(1);
 
         // Water bullets
         if (spray.activeSelf)
