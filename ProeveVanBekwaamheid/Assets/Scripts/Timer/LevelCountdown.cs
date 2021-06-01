@@ -16,6 +16,7 @@ public class LevelCountdown : MonoBehaviour
     private float initializationTime;
     public float remainingtime;
     [SerializeField] private int score = 0;
+    private Scene scene;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class LevelCountdown : MonoBehaviour
     {
         // Get Score
         score = int.Parse(GameObject.Find("Score").GetComponent<Text>().text.Substring(7));
+        scene = SceneManager.GetActiveScene();
         // Hook onLoad
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         // Load Next Scene
@@ -38,6 +40,7 @@ public class LevelCountdown : MonoBehaviour
     {
         // Load score into leaderboard script
         GameObject.Find("Main Camera").GetComponent<LeadboardManager>().score = score;
+        SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
     }
 
     private void Timing()

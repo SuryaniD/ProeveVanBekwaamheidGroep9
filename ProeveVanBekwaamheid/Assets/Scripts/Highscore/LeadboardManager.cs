@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LeadboardManager : MonoBehaviour
@@ -37,6 +38,7 @@ public class LeadboardManager : MonoBehaviour
     void loadGame()
     {
         // Call scene manager to play a new game
+        SceneManager.LoadScene("CraneFixPrototype");
     }
 
     void saveScore()
