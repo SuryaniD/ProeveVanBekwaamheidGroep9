@@ -11,7 +11,7 @@ public class stickToObject : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         
-        if (col.gameObject.tag.Equals("Container") == true)
+        if ((col.gameObject.tag.Equals("Container") || col.gameObject.tag.Equals("Unchild")) && collidingObject == null)
         {
             collidingObject = col.contacts[0].otherCollider.gameObject;
             collidingObject.GetComponent<Rigidbody>().isKinematic = true;

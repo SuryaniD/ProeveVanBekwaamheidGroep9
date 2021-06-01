@@ -6,3 +6,4 @@ Echo,65
 Foxtrot,50
 Gamma,30
 Piet,0
+Pietje,0
