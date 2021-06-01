@@ -12,28 +12,32 @@ public class Score : MonoBehaviour
     public Text lifeDisplay;
 
     //The score
-    public float CurrentScore;
+    public float currentScore;
 
     //Get-set from LevelCountdown Script
-    public float RemTime;
+    public float remTime;
 
     //Get-set from EnemyAI Script
-    public float EnemyDead;
+    public int enemyDead = 0;
 
     //Set LevelCountdown and EnemyAI on this gameobject to let this script work
-    public GameObject ScriptManager;
+    public GameObject scriptManagerCountdown;
+
+    public int secondsScore;
 
     void Update()
     {
         //Get values from other scripts script = <>
-     //   RemTime = ScriptManager.GetComponent<LevelCountdown>().remainingtime;
-        //EnemyDead = ScriptManager.GetComponent<WaypointController>().EnemiesDead;
+           remTime = scriptManagerCountdown.GetComponent<LevelCountdown>().remainingtime;
 
         //RemTime for every second left +10 score
         //EnemyDead for every Enemy dead +35 score
-        CurrentScore = RemTime * 10f + EnemyDead * 35f;
+        currentScore = secondsScore * 10 + enemyDead * 35;
+
+
+        secondsScore = Mathf.FloorToInt(remTime % 100f);
 
         //set score to : Score: CurrentScore
-        lifeDisplay.text = ("Score: ")+CurrentScore.ToString();
+        lifeDisplay.text = ("Score: ")+currentScore.ToString();
     }
 }

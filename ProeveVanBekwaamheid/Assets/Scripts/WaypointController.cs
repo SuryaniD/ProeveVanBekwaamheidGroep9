@@ -15,6 +15,11 @@ public class WaypointController : MonoBehaviour
     private float movementSpeed = 3.0f;
     [SerializeField]
     private float rotationSpeed = 3.5f;
+    
+    //score
+    public GameObject scriptManagerEnemies;
+    public int addDead;
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +69,9 @@ public class WaypointController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Container")
         {
-           
+
+            addDead = scriptManagerEnemies.GetComponent<Score>().enemyDead;
+            addDead++;
             Destroy(this.gameObject);
         }
     }

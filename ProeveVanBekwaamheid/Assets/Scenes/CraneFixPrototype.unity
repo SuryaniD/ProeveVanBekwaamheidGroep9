@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -338,7 +338,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 0b1156cdfffbc7a4c91e604bd7f9b4ca, type: 2}
   - {fileID: 2100000, guid: 8945213d259527944b1aa63b2fc70d88, type: 2}
   - {fileID: 2100000, guid: 5ef775f75039c1440ab906bd23c1cf0e, type: 2}
-  - {fileID: 2100000, guid: 134aeca01a4cc114ea8fae9597c9ecc1, type: 2}
+  - {fileID: 2100000, guid: 61ae64ae02bf945458248f36098a91ef, type: 2}
 --- !u!4 &89688601
 Transform:
   m_ObjectHideFlags: 0
@@ -5498,6 +5498,12 @@ Transform:
   m_Father: {fileID: 1866532171}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1642250949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8923344127308275256, guid: c4f8603e3eccd224db59ebda7c0f5244,
+    type: 3}
+  m_PrefabInstance: {fileID: 601455885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1651164039
 GameObject:
   m_ObjectHideFlags: 0
@@ -6006,10 +6012,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeDisplay: {fileID: 2114836373}
-  CurrentScore: 0
-  RemTime: 0
-  EnemyDead: 0
-  ScriptManager: {fileID: 89688599}
+  currentScore: 0
+  remTime: 0
+  enemyDead: 0
+  scriptManagerCountdown: {fileID: 1642250949}
+  secondsScore: 0
 --- !u!114 &1867026662
 MonoBehaviour:
   m_ObjectHideFlags: 0
