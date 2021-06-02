@@ -26,6 +26,8 @@ public class WaypointController : MonoBehaviour
     {
         lastWaypointIndex = waypoints.Count - 1;
         targetWaypoint = waypoints[targetWaypointIndex];
+
+        addDead = scriptManagerEnemies.GetComponent<Score>().enemyDead;
     }
 
     // Update is called once per frame
@@ -64,15 +66,24 @@ public class WaypointController : MonoBehaviour
 
         targetWaypoint = waypoints[targetWaypointIndex];
     }
+    /*
+       private void OnCollisionEnter(Collision collision)
+       {
+           if(collision.gameObject.tag == "Container" || collision.gameObject.tag == "Unchild")
+           {
 
+               addDead++;
+               Destroy(this.gameObject);
+           }
+       }
+       */
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Container")
+        if (collision.gameObject.tag == "Container" || collision.gameObject.tag == "Unchild")
         {
-
-            addDead = scriptManagerEnemies.GetComponent<Score>().enemyDead;
             addDead++;
             Destroy(this.gameObject);
         }
     }
+    
 }
