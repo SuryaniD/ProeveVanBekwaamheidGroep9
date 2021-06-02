@@ -6,7 +6,7 @@ public class ExplodingBullet : MonoBehaviour
 {
     public GameObject explodableObject;
     private float entry = 500.0f;
-    private float radius = 50.0f;
+    private float radius = 10.0f;
 
     void OnCollisionEnter(Collision collision)
     {
