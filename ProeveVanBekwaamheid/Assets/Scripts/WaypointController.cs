@@ -66,6 +66,7 @@ public class WaypointController : MonoBehaviour
         {
            
             Destroy(this.gameObject);
+            Debug.Log("Dead");
         }
     }
 }
