@@ -16,11 +16,11 @@ public class WaypointController : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 3.5f;
 
-    //score
+    //score made by tim
     public GameObject scriptManagerEnemies;
     public int addDead;
     public Score score;
-    //Audio
+    //Audio made by tim
     AudioSource audioData;
 
 
@@ -85,6 +85,7 @@ public class WaypointController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Container" || collision.gameObject.tag == "Unchild")
         {
+            //Plays audio, Sets Child[1]mesh off, sets collider off, adds score, startscoroutine 3 seconds before self termination(destroy)
             audioData.Play(0);
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().enabled = false;
             transform.GetComponent<CapsuleCollider>().enabled = false;

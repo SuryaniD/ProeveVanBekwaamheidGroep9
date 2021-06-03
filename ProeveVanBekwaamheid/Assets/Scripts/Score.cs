@@ -1,12 +1,11 @@
-﻿using System.Collections;
+﻿//Tim Gijzen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    //Tim Gijzen
-    //Set this on the UI
 
     //Set UI text in here 
     public Text scoreDisplay;
@@ -30,14 +29,14 @@ public class Score : MonoBehaviour
         //Get values from other scripts script = <>
         remTime = scriptManagerCountdown.GetComponent<LevelCountdown>().remainingtime;
 
-        //RemTime for every second left +10 score
+        //RemTime for every second left +1 score
         //EnemyDead for every Enemy dead +35 score
         currentScore = secondsScore * 1 + enemyDead * 35;
 
-
+        //remtime is 300% (Set ...f to same as remtime preplay)
         secondsScore = Mathf.FloorToInt(remTime % 300f);
 
-        //set score to : Score: CurrentScore
+        //set score to : Score: "CurrentScore"
         scoreDisplay.text = ("Score: ") + currentScore.ToString();
     }
 }

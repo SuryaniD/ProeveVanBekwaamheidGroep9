@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class addExtras : MonoBehaviour
+public class AddExtras : MonoBehaviour
 {
     //lists en object holder.
     public GameObject[] allContainers;
@@ -28,15 +28,13 @@ public class addExtras : MonoBehaviour
     {
         for (int i = 0; i < allContainers.Length; i++)
         {
-            //Needs a better solution becouse it needs to give 1 collider instead of 3 (doors also have tag container so collider spawns on that too).
-              //  colliderHoldingList[i] = Instantiate(moreCollider);
-              //  allContainers[i].transform.parent = colliderHoldingList[i].transform;
             //Gives allContainers a random material (addMaterials x4)
             allContainers[i].GetComponent<MeshRenderer>().material = addMaterials[Random.Range(0, 5)];
            
         }
         for (int j = 0; j < allChilds.Length; j++)
         {
+            //Removes children from parents (they become parents themself)
             allChilds[j].transform.parent = null;
         }
         }

@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class LevelCountdown : MonoBehaviour
 {
 
-    [SerializeField]private GameObject CountdownAsset;
+    [SerializeField] private GameObject CountdownAsset;
     [SerializeField] private float countdownTime = 10f;
     private float currCountdown = 10f;
     private int minutes = 0;
@@ -50,7 +50,7 @@ public class LevelCountdown : MonoBehaviour
         minutes = Mathf.FloorToInt(currCountdown / 60f);
         seconds = Mathf.FloorToInt(currCountdown % 60f);
         CountdownAsset.GetComponent<Text>().text = minutes.ToString("00") + ":" + seconds.ToString("00");
-        if (currCountdown > 0f) 
+        if (currCountdown > 0f)
         {
             currCountdown = countdownTime - timeSinceInitialization;
         }
@@ -65,9 +65,23 @@ public class LevelCountdown : MonoBehaviour
 
     }
 
+    private void EndGame()
+    {
+        //Search amount of enemies
+        int numberOfPirates = GameObject.FindGameObjectsWithTag("Enemy").Length;
+
+        if (numberOfPirates == 0)
+        {
+            LoadScene("HighscoreCredits");
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
         Timing();
+        EndGame();
     }
+
+
 }
