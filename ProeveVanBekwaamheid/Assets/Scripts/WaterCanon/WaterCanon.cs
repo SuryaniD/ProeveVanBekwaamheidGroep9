@@ -24,6 +24,7 @@ public class WaterCanon : MonoBehaviour
     private int Velocity;
     private bool IsFiring { get; set; }
 
+    //(Dexter) Value accesed by ControlsManager.cs
     public bool waterControlsActive = true;
 
     // Start is called before the first frame update
@@ -40,7 +41,7 @@ public class WaterCanon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Needs to be changed to be controlled with controllers script
+        //(Dexter) Added waterControlsActive check so that we can disable and enable the controls using ControlsManager.cs
         if (Input.GetKeyDown("f") && waterControlsActive == true) Shoot();
         if (Input.GetKey("a") && waterControlsActive == true) turnYaw(-1);
         if (Input.GetKey("d") && waterControlsActive == true) turnYaw(1);

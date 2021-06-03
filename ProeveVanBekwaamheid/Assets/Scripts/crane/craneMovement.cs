@@ -20,6 +20,7 @@ public class craneMovement : MonoBehaviour
     [SerializeField] private float winchMin = 20f, winchMax = 5000f;
     private float ropeLength;
 
+    //(Dexter) Value accesed by ControlsManager.cs
     public bool craneControlsActive = false;
 
     private void Start()
@@ -30,7 +31,7 @@ public class craneMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Placeholder, needs to be controlled with controller script
+        //(Dexter) Added craneControlsActive check so that we can disable and enable the controls using ControlsManager.cs
         if (Input.GetKey("w") && craneControlsActive == true) boomLift(1);
         if (Input.GetKey("s") && craneControlsActive == true) boomLift(-1);
         if (Input.GetKey("a") && craneControlsActive == true) rotateCrane(-1);

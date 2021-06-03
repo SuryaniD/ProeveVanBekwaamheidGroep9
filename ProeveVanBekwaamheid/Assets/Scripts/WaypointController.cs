@@ -27,6 +27,7 @@ public class WaypointController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Makes sure that when the scene starts the AI first walks to the first waypoint in the list.
         audioData = GetComponent<AudioSource>();
         lastWaypointIndex = waypoints.Count - 1;
         targetWaypoint = waypoints[targetWaypointIndex];
@@ -37,6 +38,7 @@ public class WaypointController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //In this update method is the logic to allow the AI to walk to the next waypoint in its list and add a rotation when it needs to make a corner.
         float movementStep = movementSpeed * Time.deltaTime;
         float rotationStep = rotationSpeed * Time.deltaTime;
 
@@ -53,6 +55,7 @@ public class WaypointController : MonoBehaviour
 
     void CheckDistanceToWaypoint(float currentDistance)
     {
+        //This if statement checks the distance the AI needs to walk to the next waypoint.
         if (currentDistance <= minDistance)
         {
             targetWaypointIndex++;
@@ -70,17 +73,7 @@ public class WaypointController : MonoBehaviour
 
         targetWaypoint = waypoints[targetWaypointIndex];
     }
-    /*
-       private void OnCollisionEnter(Collision collision)
-       {
-           if(collision.gameObject.tag == "Container" || collision.gameObject.tag == "Unchild")
-           {
-
-               addDead++;
-               Destroy(this.gameObject);
-           }
-       }
-       */
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Container" || collision.gameObject.tag == "Unchild")
@@ -93,7 +86,7 @@ public class WaypointController : MonoBehaviour
             StartCoroutine(Die());
         }
     }
-
+    
     IEnumerator Die()
     {
         yield return new WaitForSeconds(3);

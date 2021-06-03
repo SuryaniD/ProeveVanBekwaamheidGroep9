@@ -1,4 +1,4 @@
-﻿//Tim Gijzen
+﻿//Tim Gijzen //Dexter Changed variables values so that the game time equals 5 minutes
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
