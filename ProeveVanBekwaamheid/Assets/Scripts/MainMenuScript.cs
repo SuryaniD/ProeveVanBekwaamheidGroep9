@@ -14,7 +14,7 @@ public class MainMenuScript : MonoBehaviour
         //Presses any key to change scene
         if (Input.anyKey)
         {
-           SceneManager.LoadScene (sceneName:"CraneFixPrototype");
+           SceneManager.LoadScene (sceneName: "Instructions");
         }
     }
 }
