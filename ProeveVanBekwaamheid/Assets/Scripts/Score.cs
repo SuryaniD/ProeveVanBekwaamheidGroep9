@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
     //Set this on the UI
 
     //Set UI text in here 
-    public Text scoreDisplay;
+    public Text lifeDisplay;
 
     //The score
     public float currentScore;
@@ -29,15 +29,15 @@ public class Score : MonoBehaviour
     {
         //Get values from other scripts script = <>
            remTime = scriptManagerCountdown.GetComponent<LevelCountdown>().remainingtime;
-        
+
         //RemTime for every second left +10 score
         //EnemyDead for every Enemy dead +35 score
-        currentScore = secondsScore * 1 + enemyDead * 35;
+        currentScore = secondsScore * 10 + enemyDead * 35;
 
 
-        secondsScore = Mathf.FloorToInt(remTime % 300f);
+        secondsScore = Mathf.FloorToInt(remTime % 100f);
 
         //set score to : Score: CurrentScore
-        scoreDisplay.text = ("Score: ")+ currentScore.ToString();
+        lifeDisplay.text = ("Score: ")+currentScore.ToString();
     }
 }

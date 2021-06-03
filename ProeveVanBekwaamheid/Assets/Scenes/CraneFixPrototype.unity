@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6771301, g: 0.77147096, b: 0.8756459, a: 1}
+  m_IndirectSpecularColor: {r: 0.6771304, g: 0.77147126, b: 0.8756448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,10 +158,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
@@ -1160,30 +1156,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &184059173 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8923344127308275256, guid: c4f8603e3eccd224db59ebda7c0f5244,
-    type: 3}
-  m_PrefabInstance: {fileID: 317088365}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &184059174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184059173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8205fe7257a08458c04a70ebd9783e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreDisplay: {fileID: 2114836373}
-  currentScore: 0
-  remTime: 0
-  enemyDead: 0
-  scriptManagerCountdown: {fileID: 1642250949}
-  secondsScore: 0
 --- !u!1001 &235288579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1191,10 +1163,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
@@ -1688,10 +1656,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
@@ -3177,10 +3141,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
       objectReference: {fileID: 0}
@@ -3645,7 +3605,7 @@ PrefabInstance:
     - target: {fileID: 8923344127308275258, guid: c4f8603e3eccd224db59ebda7c0f5244,
         type: 3}
       propertyPath: countdownTime
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8923344127308275259, guid: c4f8603e3eccd224db59ebda7c0f5244,
         type: 3}
@@ -3985,10 +3945,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
       objectReference: {fileID: 0}
@@ -4130,10 +4086,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
@@ -5089,10 +5041,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
       objectReference: {fileID: 0}
@@ -5484,10 +5432,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
@@ -7212,10 +7156,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
       objectReference: {fileID: 0}
@@ -7690,6 +7630,7 @@ GameObject:
   - component: {fileID: 1867026664}
   - component: {fileID: 1867026663}
   - component: {fileID: 1867026662}
+  - component: {fileID: 1867026661}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7697,6 +7638,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1867026661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867026660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8205fe7257a08458c04a70ebd9783e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeDisplay: {fileID: 2114836373}
+  currentScore: 0
+  remTime: 0
+  enemyDead: 0
+  scriptManagerCountdown: {fileID: 1642250949}
+  secondsScore: 0
 --- !u!114 &1867026662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8343,7 +8302,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 317088365}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184059173}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -8386,10 +8345,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
-    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 184059174}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
