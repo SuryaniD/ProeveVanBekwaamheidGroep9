@@ -19,7 +19,7 @@ public class WaypointController : MonoBehaviour
     //score
     public GameObject scriptManagerEnemies;
     public int addDead;
-
+    public Score score;
     //Audio
     AudioSource audioData;
 
@@ -88,6 +88,7 @@ public class WaypointController : MonoBehaviour
             audioData.Play(0);
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().enabled = false;
             transform.GetComponent<CapsuleCollider>().enabled = false;
+            score.enemyDead++;
             StartCoroutine(Die());
         }
     }
