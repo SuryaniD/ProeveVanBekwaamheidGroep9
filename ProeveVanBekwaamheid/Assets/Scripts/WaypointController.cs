@@ -20,10 +20,14 @@ public class WaypointController : MonoBehaviour
     public GameObject scriptManagerEnemies;
     public int addDead;
 
+    //Audio
+    AudioSource audioData;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         lastWaypointIndex = waypoints.Count - 1;
         targetWaypoint = waypoints[targetWaypointIndex];
 
@@ -81,9 +85,18 @@ public class WaypointController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Container" || collision.gameObject.tag == "Unchild")
         {
-            addDead++;
-            Destroy(this.gameObject);
+            audioData.Play(0);
+            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().enabled = false;
+            transform.GetComponent<CapsuleCollider>().enabled = false;
+            StartCoroutine(Die());
         }
     }
-    
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(this.gameObject);
+    }
+
+
 }
