@@ -15,11 +15,11 @@ public class WaypointController : MonoBehaviour
     private float movementSpeed = 3.0f;
     [SerializeField]
     private float rotationSpeed = 3.5f;
-    
+
     //score
     public GameObject scriptManagerEnemies;
     public int addDead;
-
+    public Score score;
     //Audio
     AudioSource audioData;
 
@@ -39,7 +39,7 @@ public class WaypointController : MonoBehaviour
     {
         float movementStep = movementSpeed * Time.deltaTime;
         float rotationStep = rotationSpeed * Time.deltaTime;
-        
+
         Vector3 directionToTarget = targetWaypoint.position - transform.position;
         Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
 
@@ -53,7 +53,7 @@ public class WaypointController : MonoBehaviour
 
     void CheckDistanceToWaypoint(float currentDistance)
     {
-        if(currentDistance <= minDistance)
+        if (currentDistance <= minDistance)
         {
             targetWaypointIndex++;
             UpdateTargetWaypoint();
@@ -88,6 +88,7 @@ public class WaypointController : MonoBehaviour
             audioData.Play(0);
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().enabled = false;
             transform.GetComponent<CapsuleCollider>().enabled = false;
+            score.enemyDead++;
             StartCoroutine(Die());
         }
     }
@@ -97,6 +98,4 @@ public class WaypointController : MonoBehaviour
         yield return new WaitForSeconds(3);
         Destroy(this.gameObject);
     }
-
-
 }

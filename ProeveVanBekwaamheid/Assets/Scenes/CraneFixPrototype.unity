@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6771304, g: 0.77147126, b: 0.8756448, a: 1}
+  m_IndirectSpecularColor: {r: 0.6771301, g: 0.77147096, b: 0.8756459, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,6 +158,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
@@ -1164,6 +1168,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
       objectReference: {fileID: 0}
@@ -1656,6 +1664,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
@@ -3141,6 +3153,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
       objectReference: {fileID: 0}
@@ -3605,7 +3621,7 @@ PrefabInstance:
     - target: {fileID: 8923344127308275258, guid: c4f8603e3eccd224db59ebda7c0f5244,
         type: 3}
       propertyPath: countdownTime
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8923344127308275259, guid: c4f8603e3eccd224db59ebda7c0f5244,
         type: 3}
@@ -3945,6 +3961,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
       objectReference: {fileID: 0}
@@ -4086,6 +4106,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
@@ -5041,6 +5065,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
       objectReference: {fileID: 0}
@@ -5385,7 +5413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 79.75513, y: -64.75517}
+  m_AnchoredPosition: {x: 79.75488, y: -64.75513}
   m_SizeDelta: {x: 283.51035, y: 283.51038}
   m_Pivot: {x: 0.49999988, y: 0.50000006}
 --- !u!114 &1285480124
@@ -5432,6 +5460,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
@@ -7156,6 +7188,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
       objectReference: {fileID: 0}
@@ -7650,7 +7686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8205fe7257a08458c04a70ebd9783e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeDisplay: {fileID: 2114836373}
+  scoreDisplay: {fileID: 2114836373}
   currentScore: 0
   remTime: 0
   enemyDead: 0
@@ -8345,6 +8381,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343830310}
     m_Modifications:
+    - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1867026661}
     - target: {fileID: 1611718447, guid: 479372c0aeda945b08dc185e1dee3ded, type: 3}
       propertyPath: movementSpeed
       value: 1.5
