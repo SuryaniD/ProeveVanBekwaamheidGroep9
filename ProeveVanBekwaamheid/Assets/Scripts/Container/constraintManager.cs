@@ -29,11 +29,7 @@ public class constraintManager : MonoBehaviour
             rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
             stackedObject = true;
        }
-        if (collider.gameObject.tag.Equals("Ground") == true)
-        {
-            rigidBody.mass = 1000;
-            
-        }
+        
 
           if (collider.gameObject.tag.Equals("Ground") && stackedObject == true)
           {

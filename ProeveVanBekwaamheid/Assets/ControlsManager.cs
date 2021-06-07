@@ -19,7 +19,7 @@ public class ControlsManager : MonoBehaviour
     void Update()
     {
         //Makes it so that when the key "q" is pressed the controls switch from crane to canon and other way around.
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (CraneMovement.craneControlsActive == false)
             {

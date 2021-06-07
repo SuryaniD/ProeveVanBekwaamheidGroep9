@@ -42,7 +42,7 @@ public class WaterCanon : MonoBehaviour
     void Update()
     {
         //(Dexter) Added waterControlsActive check so that we can disable and enable the controls using ControlsManager.cs
-        if (Input.GetKeyDown("f") && waterControlsActive == true) Shoot();
+        if (Input.GetKeyDown("space") && waterControlsActive == true) Shoot();
         if (Input.GetKey("a") && waterControlsActive == true) turnYaw(-1);
         if (Input.GetKey("d") && waterControlsActive == true) turnYaw(1);
         if (Input.GetKey("w") && waterControlsActive == true) turnPitch(-1);

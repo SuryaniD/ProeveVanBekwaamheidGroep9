@@ -36,10 +36,10 @@ public class craneMovement : MonoBehaviour
         if (Input.GetKey("s") && craneControlsActive == true) boomLift(-1);
         if (Input.GetKey("a") && craneControlsActive == true) rotateCrane(-1);
         if (Input.GetKey("d") && craneControlsActive == true) rotateCrane(1);
-        if (Input.GetKey("c") && craneControlsActive == true) winch(1);
+        if (Input.GetKey("q") && craneControlsActive == true) winch(1);
         if (Input.GetKey("e") && craneControlsActive == true) winch(-1);
-        if (Input.GetKey("x") && craneControlsActive == true) boomExtension(1);
-        if (Input.GetKey("z") && craneControlsActive == true) boomExtension(-1);
+        if (Input.GetKey(KeyCode.LeftShift) && craneControlsActive == true) boomExtension(1);
+        if (Input.GetKey(KeyCode.LeftControl) && craneControlsActive == true) boomExtension(-1);
     }
 
     void boomExtension(short dir)
