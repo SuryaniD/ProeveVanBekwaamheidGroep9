@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5c51be6076cdfac4a88b744b2625936a
   - enabled: 1
+    path: Assets/Scenes/Final Scenes/story.unity
+    guid: 9fcd38f8a2001764eab9dbf7584f7a55
+  - enabled: 1
     path: Assets/Scenes/Final Scenes/Instructions.unity
     guid: d9de11e3ffaff1645895898f14953d31
   - enabled: 1
