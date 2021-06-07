@@ -1,3 +1,4 @@
+Gamma,599
 Alpha,100
 Bravo,95
 Charlie,80
