@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3018134, g: 0.4276259, b: 0.5894178, a: 1}
+  m_IndirectSpecularColor: {r: 0.6771304, g: 0.77147126, b: 0.8756448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -316,7 +316,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 89688601}
-  - component: {fileID: 89688600}
   - component: {fileID: 89688602}
   - component: {fileID: 89688603}
   - component: {fileID: 89688604}
@@ -327,23 +326,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &89688600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89688599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf95e8cd5d88de43ac96f2ff09284d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allContainers: []
-  colliderHoldingList: []
-  allChilds: []
-  moreCollider: {fileID: 0}
-  addMaterials: []
 --- !u!4 &89688601
 Transform:
   m_ObjectHideFlags: 0
@@ -385,10 +367,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allContainers: []
-  colliderHoldingList: []
   allChilds: []
-  moreCollider: {fileID: 0}
-  addMaterials: []
+  addMaterials:
+  - {fileID: 2100000, guid: 61ae64ae02bf945458248f36098a91ef, type: 2}
+  - {fileID: 2100000, guid: 0b1156cdfffbc7a4c91e604bd7f9b4ca, type: 2}
+  - {fileID: 2100000, guid: 5ef775f75039c1440ab906bd23c1cf0e, type: 2}
+  - {fileID: 2100000, guid: 8945213d259527944b1aa63b2fc70d88, type: 2}
 --- !u!114 &89688604
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,9 +7,7 @@ public class AddExtras : MonoBehaviour
 {
     //lists en object holder.
     public GameObject[] allContainers;
-    public GameObject[] colliderHoldingList;
     public GameObject[] allChilds;
-    public GameObject moreCollider;
     //Material list.
     public Material[] addMaterials;
   
@@ -29,8 +27,8 @@ public class AddExtras : MonoBehaviour
         for (int i = 0; i < allContainers.Length; i++)
         {
             //Gives allContainers a random material (addMaterials x4)
-            allContainers[i].GetComponent<MeshRenderer>().material = addMaterials[Random.Range(0, 5)];
-           
+            allContainers[i].GetComponent<MeshRenderer>().material = addMaterials[Random.Range(0,4)];
+          
         }
         for (int j = 0; j < allChilds.Length; j++)
         {
