@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ammoManager : MonoBehaviour
 {
    public static int ammo = 5;
+   public Text ammoText;
 
     void Update()
     {
