@@ -366,6 +366,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf95e8cd5d88de43ac96f2ff09284d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allContainers: []
+  allChilds: []
+  addMaterials:
+  - {fileID: 2100000, guid: 61ae64ae02bf945458248f36098a91ef, type: 2}
+  - {fileID: 2100000, guid: 0b1156cdfffbc7a4c91e604bd7f9b4ca, type: 2}
+  - {fileID: 2100000, guid: 134aeca01a4cc114ea8fae9597c9ecc1, type: 2}
+  - {fileID: 2100000, guid: 5ef775f75039c1440ab906bd23c1cf0e, type: 2}
+  - {fileID: 2100000, guid: 8945213d259527944b1aa63b2fc70d88, type: 2}
 --- !u!114 &89688604
 MonoBehaviour:
   m_ObjectHideFlags: 0
