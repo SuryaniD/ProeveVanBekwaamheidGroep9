@@ -67,7 +67,8 @@ public class LeadboardManager : MonoBehaviour
 
     void loadLeaderboard()
     {
-        string path = "ScoreList.txt";
+        //string path = "ScoreList.txt";
+        string path = "Assets/Scripts/Highscore/ScoreList.txt";
         // Clear Leaderboard
         leaderboardNames.text = "";
         leaderboardScores.text = "";
