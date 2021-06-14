@@ -14,6 +14,7 @@ public class constraintManager : MonoBehaviour
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
         stackedObject = false;
+        rigidBody.mass = 35;
     }
 
     void OnCollisionEnter(Collision collider)

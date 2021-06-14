@@ -10,7 +10,7 @@ public class AddExtras : MonoBehaviour
     public GameObject[] allChilds;
     //Material list.
     public Material[] addMaterials;
-  
+
 
     void Start()
     {
@@ -21,20 +21,20 @@ public class AddExtras : MonoBehaviour
         addMaterialsAndColliders();
     }
 
-   
+
     public void addMaterialsAndColliders()
     {
         for (int i = 0; i < allContainers.Length; i++)
         {
             //Gives allContainers a random material (addMaterials x4)
-            allContainers[i].GetComponent<MeshRenderer>().material = addMaterials[Random.Range(0,4)];
-          
+            allContainers[i].GetComponent<MeshRenderer>().material = addMaterials[Random.Range(0, 4)];
+
         }
         for (int j = 0; j < allChilds.Length; j++)
         {
             //Removes children from parents (they become parents themself)
             allChilds[j].transform.parent = null;
         }
-        }
-    
+    }
+
 }
