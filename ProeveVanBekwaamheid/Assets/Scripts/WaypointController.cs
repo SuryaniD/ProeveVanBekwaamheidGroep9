@@ -20,6 +20,7 @@ public class WaypointController : MonoBehaviour
     public GameObject scriptManagerEnemies;
     public int addDead;
     public Score score;
+    public GameObject finder;
     //Audio made by tim
     AudioSource audioData;
 
@@ -76,7 +77,7 @@ public class WaypointController : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Container" || collision.gameObject.tag == "Unchild")
+        if (collision.gameObject.tag == "Container")
         {
             //Plays audio, Sets Child[1]mesh off, sets collider off, adds score, startscoroutine 3 seconds before self termination(destroy)
             audioData.Play(0);

@@ -5,8 +5,8 @@ using UnityEngine;
 public class ExplodingBullet : MonoBehaviour
 {
     public GameObject explodableObject;
-    private float entry = 10000.0f;
-    private float radius = 10.0f;
+    private float entry = 30000.0f;
+    private float radius = 30.0f;
 
     void OnCollisionEnter(Collision collision)
     {

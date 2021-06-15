@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Unchild
   - Enemy
+  - ContainerGrounded
   layers:
   - Default
   - TransparentFX

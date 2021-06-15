@@ -7,6 +7,7 @@ public class pauseGame : MonoBehaviour
 {
     bool isPaused;
     public Image pauseScreen;
+    public Text CameraText;
 
     void Start()
     {
@@ -34,8 +35,11 @@ public class pauseGame : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         var opacity = pauseScreen.color;
+        opacity = CameraText.color;
         opacity.a = 1f;
         pauseScreen.color = opacity;
+        CameraText.color = opacity;
+       
     }
 
     void Unpause()
@@ -43,7 +47,9 @@ public class pauseGame : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         var opacity = pauseScreen.color;
+        opacity = CameraText.color;
         opacity.a = 0f;
         pauseScreen.color = opacity;
+        CameraText.color = opacity;
     }
 }

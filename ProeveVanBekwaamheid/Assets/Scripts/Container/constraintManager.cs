@@ -14,7 +14,7 @@ public class constraintManager : MonoBehaviour
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
         stackedObject = false;
-        rigidBody.mass = 35;
+        rigidBody.mass = 100;
     }
 
     void OnCollisionEnter(Collision collider)
@@ -27,19 +27,15 @@ public class constraintManager : MonoBehaviour
 
             /*the code for rotation constraints is repeated multiple times because whenever a new line is executed where constrains are enabled, it disables the constraints done in a previous
               line of code.*/  
-            rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+            //rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
             stackedObject = true;
        }
         
 
-          if (collider.gameObject.tag.Equals("Ground") && stackedObject == true)
+          if (collider.gameObject.tag.Equals("Ground"))
           {
-
-            //If a container stacked on another container falls to the ground, it'll despawn after 10 seconds
-            rigidBody.constraints = RigidbodyConstraints.FreezeRotationX;
-            rigidBody.mass = 25;
-            Destroy(gameObject, destroyTimer);
-          }
+            transform.gameObject.tag = "ContainerGrounded";
+        }
 
     }
 
