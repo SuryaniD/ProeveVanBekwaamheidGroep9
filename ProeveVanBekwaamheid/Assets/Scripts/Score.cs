@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
     //Set LevelCountdown and EnemyAI on this gameobject to let this script work
     public GameObject scriptManagerCountdown;
 
-    public int secondsScore;
+
 
     void Update()
     {
@@ -31,10 +31,9 @@ public class Score : MonoBehaviour
 
         //RemTime for every second left +1 score
         //EnemyDead for every Enemy dead +35 score
-        currentScore = secondsScore * 1 + enemyDead * 35;
+        currentScore = enemyDead * 10;
 
-        //remtime is 300% (Set ...f to same as remtime preplay)
-        secondsScore = Mathf.FloorToInt(remTime % 300f);
+
 
         //set score to : Score: "CurrentScore"
         scoreDisplay.text = ("Score: ") + currentScore.ToString();
