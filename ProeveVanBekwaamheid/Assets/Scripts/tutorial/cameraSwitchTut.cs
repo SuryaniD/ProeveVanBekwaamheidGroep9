@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraSwitch : MonoBehaviour
+public class caneraSwitchTut : MonoBehaviour
 {
     public Camera cam1;
     public Camera cam2;
