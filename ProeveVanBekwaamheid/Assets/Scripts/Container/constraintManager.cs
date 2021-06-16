@@ -6,6 +6,7 @@ using UnityEngine;
 //The point of this script is to alter how the container behaves depending on what it collides with.
 public class constraintManager : MonoBehaviour
 {
+    public GameObject effect;
     private Rigidbody rigidBody;
     private bool stackedObject;
     private int destroyTimer = 10;
@@ -32,9 +33,12 @@ public class constraintManager : MonoBehaviour
        }
         
 
-          if (collider.gameObject.tag.Equals("Ground"))
-          {
+        if (collider.gameObject.tag.Equals("Ground"))
+        {
             transform.gameObject.tag = "ContainerGrounded";
+            // Does not work
+            //Instantiate(effect, transform.position, transform.rotation);
+            //Destroy(effect, 3);
         }
 
         if (collider.gameObject.tag.Equals("Crane"))
