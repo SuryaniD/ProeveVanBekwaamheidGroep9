@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3018134, g: 0.4276259, b: 0.5894178, a: 1}
+  m_IndirectSpecularColor: {r: 0.6771304, g: 0.77147126, b: 0.8756448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -639,6 +639,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2633732839746188612, guid: ba59c077c99714a4a8c7d68f4dd5eff9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Crane
+      objectReference: {fileID: 0}
     - target: {fileID: 2633732839746188613, guid: ba59c077c99714a4a8c7d68f4dd5eff9,
         type: 3}
       propertyPath: m_Size.x
@@ -648,6 +653,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.053
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633732839746188613, guid: ba59c077c99714a4a8c7d68f4dd5eff9,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3019522569279785324, guid: ba59c077c99714a4a8c7d68f4dd5eff9,
         type: 3}
@@ -668,6 +678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cranePivot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455362094464217801, guid: ba59c077c99714a4a8c7d68f4dd5eff9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Crane
       objectReference: {fileID: 0}
     - target: {fileID: 6455362094464217814, guid: ba59c077c99714a4a8c7d68f4dd5eff9,
         type: 3}
@@ -3338,7 +3353,7 @@ PrefabInstance:
     - target: {fileID: 8923344127308275258, guid: c4f8603e3eccd224db59ebda7c0f5244,
         type: 3}
       propertyPath: countdownTime
-      value: 300
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8923344127308275259, guid: c4f8603e3eccd224db59ebda7c0f5244,
         type: 3}
@@ -6209,50 +6224,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1330090283}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1338182819
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1338182820}
-  - component: {fileID: 1338182821}
-  m_Layer: 0
-  m_Name: 1 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1338182820
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338182819}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 20.95, y: -17.64, z: -24.59}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2001813680}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!65 &1338182821
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338182819}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 40, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1343830309
 GameObject:
   m_ObjectHideFlags: 0
@@ -6842,50 +6813,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 00e583a24bc2a47bea81682710b8d1b1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b6306dd3e72bd947ad12d60cc81eacb, type: 3}
---- !u!1 &1552387969
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1552387970}
-  - component: {fileID: 1552387971}
-  m_Layer: 0
-  m_Name: 1 (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1552387970
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552387969}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 55.95, y: -17.64, z: -24.59}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2001813680}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!65 &1552387971
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552387969}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 40, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1556718129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6067938747137771011, guid: 9b6306dd3e72bd947ad12d60cc81eacb,
@@ -9488,7 +9415,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2001813680}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1890132814
 BoxCollider:
@@ -9523,7 +9450,7 @@ PrefabInstance:
     - target: {fileID: 1366837098314786323, guid: a8acfb1752873094193f1b526f1c36ac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.441328
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1366837098314786323, guid: a8acfb1752873094193f1b526f1c36ac,
         type: 3}
@@ -9885,8 +9812,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1104685353}
-  - {fileID: 1338182820}
-  - {fileID: 1552387970}
   - {fileID: 1890132813}
   m_Father: {fileID: 0}
   m_RootOrder: 23

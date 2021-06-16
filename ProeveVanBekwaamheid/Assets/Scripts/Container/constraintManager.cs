@@ -37,6 +37,10 @@ public class constraintManager : MonoBehaviour
             transform.gameObject.tag = "ContainerGrounded";
         }
 
+        if (collider.gameObject.tag.Equals("Crane"))
+        {
+            transform.gameObject.tag = "Container";
+        }
     }
 
     private void OnCollisionExit(Collision collision)

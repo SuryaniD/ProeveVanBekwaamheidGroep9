@@ -10,6 +10,7 @@ TagManager:
   - Unchild
   - Enemy
   - ContainerGrounded
+  - Crane
   layers:
   - Default
   - TransparentFX
