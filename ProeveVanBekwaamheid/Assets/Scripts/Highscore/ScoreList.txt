@@ -1,3 +1,4 @@
+Gamma,599
 Alpha,100
 Bravo,95
 Charlie,80
@@ -5,5 +6,4 @@ Delta,75
 Echo,65
 Foxtrot,50
 Gamma,30
-Piet,0
-Pietje,0
+

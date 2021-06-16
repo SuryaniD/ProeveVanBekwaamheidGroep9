@@ -29,11 +29,7 @@ public class LeadboardManager : MonoBehaviour
         loadLeaderboard();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     void loadGame()
     {
@@ -71,6 +67,7 @@ public class LeadboardManager : MonoBehaviour
 
     void loadLeaderboard()
     {
+        //string path = "ScoreList.txt";
         string path = "Assets/Scripts/Highscore/ScoreList.txt";
         // Clear Leaderboard
         leaderboardNames.text = "";

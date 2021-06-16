@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Scenes/Instructions.unity
     guid: d9de11e3ffaff1645895898f14953d31
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Highscore.unity
     guid: 0d777c37848b4aa4eb6228cf82aba6a1
   - enabled: 1
