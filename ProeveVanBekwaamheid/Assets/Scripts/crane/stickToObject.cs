@@ -7,6 +7,7 @@ public class stickToObject : MonoBehaviour
 {
     private GameObject collidingObject = null;
     private FixedJoint joint;
+    public GameObject indicator;
 
 
     void OnCollisionEnter(Collision col)
@@ -17,9 +18,15 @@ public class stickToObject : MonoBehaviour
             collidingObject = col.contacts[0].otherCollider.gameObject;
             collidingObject.GetComponent<Rigidbody>().isKinematic = true;
             collidingObject.transform.SetParent(gameObject.transform);
+            indicator.SetActive(false);
+            
         }
-    }
 
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        indicator.SetActive(true);
+    }
     private void Update()
     {
         //Needs to be pressed somewhat longer to work

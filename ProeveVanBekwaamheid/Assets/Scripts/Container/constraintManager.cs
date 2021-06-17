@@ -44,6 +44,8 @@ public class constraintManager : MonoBehaviour
         if (collider.gameObject.tag.Equals("Crane"))
         {
             transform.gameObject.tag = "Container";
+            float yRotation = transform.eulerAngles.y;
+            transform.rotation = Quaternion.Euler(0, yRotation, 0);
         }
     }
 
