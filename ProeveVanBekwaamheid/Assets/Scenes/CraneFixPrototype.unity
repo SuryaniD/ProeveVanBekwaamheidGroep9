@@ -11123,7 +11123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469a554c0690f5346afcfd203b4458f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aManager: {fileID: 1933979720}
   dobbelManager: {fileID: 1495241849}
+  score: {fileID: 1867026661}
   enemyPiratesArray: []
   piratesDestroyed: 0
 --- !u!114 &1495241855
