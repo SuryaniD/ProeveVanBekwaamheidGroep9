@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExplodingBullet : MonoBehaviour
 {
-    public GameObject explodableObject;
+    public GameObject explodableObject1, explodableObject2;
     private float entry = 30000.0f;
     private float radius = 30.0f;
 
@@ -14,7 +14,11 @@ public class ExplodingBullet : MonoBehaviour
         //GameObject explodingObject = Instantiate(explodableObject, transform.position, transform.rotation);
         //Destroy(explodableObject, 3);
         knockBack();
-        Destroy(gameObject);     
+        Instantiate(explodableObject1, transform.position, transform.rotation);
+        Instantiate(explodableObject2, transform.position, transform.rotation);
+        Destroy(gameObject);
+        Destroy(explodableObject1, 3);
+        Destroy(explodableObject2, 3);
     }
 
     void knockBack()

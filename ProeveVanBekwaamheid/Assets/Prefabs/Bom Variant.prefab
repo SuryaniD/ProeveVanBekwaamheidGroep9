@@ -23,6 +23,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2848123686880966614, guid: af29bbf0cb8ebb74ba48ab40a6a5d2d7,
+        type: 3}
+      propertyPath: particleEffect1
+      value: 
+      objectReference: {fileID: 7958765856522130735, guid: c17f6470085b38e4d8941c8488bb4667,
+        type: 3}
+    - target: {fileID: -2848123686880966614, guid: af29bbf0cb8ebb74ba48ab40a6a5d2d7,
+        type: 3}
+      propertyPath: particleEffect2
+      value: 
+      objectReference: {fileID: 204456513260690602, guid: 99b359b8242bd514a99c3ff4cb141e03,
+        type: 3}
+    - target: {fileID: -2848123686880966614, guid: af29bbf0cb8ebb74ba48ab40a6a5d2d7,
+        type: 3}
+      propertyPath: explodableObject1
+      value: 
+      objectReference: {fileID: 7958765856522130735, guid: c17f6470085b38e4d8941c8488bb4667,
+        type: 3}
+    - target: {fileID: -2848123686880966614, guid: af29bbf0cb8ebb74ba48ab40a6a5d2d7,
+        type: 3}
+      propertyPath: explodableObject2
+      value: 
+      objectReference: {fileID: 204456513260690602, guid: 99b359b8242bd514a99c3ff4cb141e03,
+        type: 3}
     - target: {fileID: 4793468512457013648, guid: af29bbf0cb8ebb74ba48ab40a6a5d2d7,
         type: 3}
       propertyPath: m_Name
