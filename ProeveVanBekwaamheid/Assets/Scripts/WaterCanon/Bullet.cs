@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject impactPrefab;
     [SerializeField] private float despawnDistance = 1f;
     Vector3 originalPos;
 
@@ -16,7 +17,15 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+        
         Destroy(this.gameObject);
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Instantiate(impactPrefab, transform.position, transform.rotation);
+        
     }
 
     // Update is called once per frame
@@ -24,7 +33,11 @@ public class Bullet : MonoBehaviour
     {
         if ((transform.position - originalPos).magnitude > despawnDistance)
         {
+            
             Destroy(this.gameObject);
+            Instantiate(impactPrefab, transform.position, transform.rotation);
+            Destroy(impactPrefab);
+
         }
     }
 }
