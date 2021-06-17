@@ -45,7 +45,14 @@ public class constraintManager : MonoBehaviour
         {
             transform.gameObject.tag = "Container";
             float yRotation = transform.eulerAngles.y;
-            transform.rotation = Quaternion.Euler(0, yRotation, 0);
+            float zRotation = transform.eulerAngles.z;
+            if (zRotation == 90)
+            {
+                transform.rotation = Quaternion.Euler(0, yRotation, yRotation);
+            }
+            else{
+                transform.rotation = Quaternion.Euler(0, yRotation, 0);
+            }
         }
     }
 
