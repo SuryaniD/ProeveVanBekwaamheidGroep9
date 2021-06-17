@@ -110,6 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7ea7e2b59e3294db6841b97598a604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactPrefab: {fileID: 6004682188250031846, guid: 334037a554c3ab548895e8534f6c59bc,
+    type: 3}
   despawnDistance: 100
 --- !u!135 &-2286685200827662669
 SphereCollider:
