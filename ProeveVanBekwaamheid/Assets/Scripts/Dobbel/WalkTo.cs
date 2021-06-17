@@ -23,11 +23,11 @@ public class WalkTo : MonoBehaviour
     void Start()
     {
         walkSpeed = Speed * Time.deltaTime;
-        pdestroyed = diceFight.piratesDestroyed;
     }
     
     void Update()
     {
+        pdestroyed = diceFight.piratesDestroyed;
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[pdestroyed].transform.position, walkSpeed);
         transform.rotation = Quaternion.Slerp(transform.rotation, wayPoints[pdestroyed].transform.rotation, Time.deltaTime * smooth);
     }

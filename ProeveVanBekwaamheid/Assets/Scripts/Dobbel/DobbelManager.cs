@@ -24,6 +24,8 @@ public class DobbelManager : MonoBehaviour
     private bool enemyIsPlaying = false;
     private bool antiRepeatEP = false;
 
+    private bool setAmmoSoundOff = false;
+
     public int timesRolled;
 
     public int hitDmg;
@@ -40,7 +42,6 @@ public class DobbelManager : MonoBehaviour
 
     void Start()
     {
-        
         rb = questPlayer.GetComponent<Rigidbody>();
     }
     
@@ -64,6 +65,13 @@ public class DobbelManager : MonoBehaviour
             oldSQPirateKills = newSQPirateKills;
         }
 
+        if (newSQPirateKills == 4 && setAmmoSoundOff == false)
+        {
+            setAmmoSoundOff = true;
+            questPlayer.transform.Find("GiveAmmoSound").gameObject.GetComponent<AudioSource>().Play();
+            ammoManager.ammo = ammoManager.ammo + 5;
+        }
+
         //If get input Up spawn and start rolling dice
         if (Input.GetKeyDown(KeyCode.UpArrow) && rollBool1 == false && throwScore >= 1 && enemyIsPlaying == false)
         {
@@ -72,6 +80,8 @@ public class DobbelManager : MonoBehaviour
             Instantiate(prefabDice, new Vector3(questPlayer.transform.position.x, questPlayer.transform.position.y + 4,questPlayer.transform.position.z), Quaternion.identity);
             rollingDiceBool = true;
             dice = GameObject.FindGameObjectWithTag("DobbelSteen");
+            dice.transform.Find("RollingSound").gameObject.GetComponent<AudioSource>().loop = true;
+            dice.transform.Find("RollingSound").gameObject.GetComponent<AudioSource>().Play();
             StartCoroutine(RollingDice());
             StartCoroutine(RrollBool2SetTrue());
         }
@@ -81,6 +91,7 @@ public class DobbelManager : MonoBehaviour
         {
             rollBool2 = false;
             rollingDiceBool = false;
+            questPlayer.transform.Find("JumpSound").gameObject.GetComponent<AudioSource>().Play();
             rb.AddForce(Vector3.up * 500);
             hitDmg = Random.Range(1,7);
             StartCoroutine(RotatingDice());
@@ -105,7 +116,7 @@ public class DobbelManager : MonoBehaviour
     IEnumerator RollingDice()
     {
         //Het zijn allemaal if statements zodat het tussen door kan stoppen(als de player input 2 doet)
-        //1
+        //1       
         if (rollingDiceBool == true)
         {
             dice.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
@@ -151,7 +162,8 @@ public class DobbelManager : MonoBehaviour
     //Laat zien wat je gerolt hebt, delete de dice en herstart het script.
     IEnumerator RotatingDice()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.4f);
+        dice.transform.Find("RollingSound").gameObject.GetComponent<AudioSource>().Stop();
         if (hitDmg == 1 || enemyHitDmg == 1)
         {
             dice.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
@@ -177,6 +189,8 @@ public class DobbelManager : MonoBehaviour
             dice.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 180.0f);
         }
 
+        dice.transform.Find("ChosenSound").gameObject.GetComponent<AudioSource>().Play();
+
         if (enemyIsPlaying == false)
         {
             enemyIsPlaying = true;
@@ -185,16 +199,19 @@ public class DobbelManager : MonoBehaviour
             timesRolled++;
             rollBool1 = false;
         }
+        
     }
 
 
     IEnumerator LetEnemyPlay()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         Instantiate(prefabDice, new Vector3(enemyPirate[whichPirate].transform.position.x, enemyPirate[whichPirate].transform.position.y + 4, enemyPirate[whichPirate].transform.position.z), Quaternion.identity);
         dice = GameObject.FindGameObjectWithTag("DobbelSteen");
 
         yield return new WaitForSeconds(0.5f);
+        dice.transform.Find("RollingSound").gameObject.GetComponent<AudioSource>().loop = true;
+        dice.transform.Find("RollingSound").gameObject.GetComponent<AudioSource>().Play();
 
         dice.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         yield return new WaitForSeconds(0.2f);

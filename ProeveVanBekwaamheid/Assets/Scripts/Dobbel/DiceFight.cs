@@ -75,21 +75,17 @@ public class DiceFight : MonoBehaviour
 
         if(enemyHealth <= 0)
         {
+            enemyPiratesArray[piratesDestroyed].transform.Find("DeathSound").gameObject.GetComponent<AudioSource>().Play();
             enemyHealth = 6;
-            Destroy(enemyPiratesArray[piratesDestroyed]);
             score.enemyDead++;
             StartCoroutine(WaitForWalk());
-        }
-
-        if (piratesDestroyed == 4)
-        {
-            ammoManager.ammo = ammoManager.ammo + 5;
         }
        
     }
     IEnumerator WaitForWalk()
     {
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(2f);
+        Destroy(enemyPiratesArray[piratesDestroyed]);
         piratesDestroyed++;
     }
 }
