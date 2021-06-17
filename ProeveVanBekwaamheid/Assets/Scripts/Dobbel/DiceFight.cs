@@ -5,7 +5,10 @@ using UnityEngine;
 public class DiceFight : MonoBehaviour
 {
 
+    public ammoManager aManager;
     public DobbelManager dobbelManager;
+    public Score score;
+
     [SerializeField]
     private GameObject[] enemyPiratesArray;
 
@@ -56,7 +59,6 @@ public class DiceFight : MonoBehaviour
             hasThrown--;
 
             enemyHealth = enemyHealth - oldDmgPlayer;
-            Debug.Log(hasThrown);
         }
 
         if (hasThrownEnemy >= 1)
@@ -64,7 +66,6 @@ public class DiceFight : MonoBehaviour
             hasThrownEnemy--;
 
             playerHealth = playerHealth - oldDmgEnemy;
-            Debug.Log(hasThrownEnemy);
         }
 
         if (playerHealth <= 0)
@@ -76,7 +77,19 @@ public class DiceFight : MonoBehaviour
         {
             enemyHealth = 6;
             Destroy(enemyPiratesArray[piratesDestroyed]);
-            piratesDestroyed++;
+            score.enemyDead++;
+            StartCoroutine(WaitForWalk());
         }
+
+        if (piratesDestroyed == 4)
+        {
+            ammoManager.ammo = ammoManager.ammo + 5;
+        }
+       
+    }
+    IEnumerator WaitForWalk()
+    {
+        yield return new WaitForSeconds(5.5f);
+        piratesDestroyed++;
     }
 }
