@@ -78,6 +78,7 @@ public class DobbelManager : MonoBehaviour
         {
             rollBool1 = true;
             throwScore--;
+            hitDmg = 0;
             Instantiate(prefabDice, new Vector3(questPlayer.transform.position.x, questPlayer.transform.position.y + 4,questPlayer.transform.position.z), Quaternion.identity);
             rollingDiceBool = true;
             dice = GameObject.FindGameObjectWithTag("DobbelSteen");
@@ -93,8 +94,8 @@ public class DobbelManager : MonoBehaviour
             rollBool2 = false;
             rollingDiceBool = false;
             questPlayer.transform.Find("JumpSound").gameObject.GetComponent<AudioSource>().Play();
+            hitDmg = Random.Range(1, 7);
             rb.AddForce(Vector3.up * 500);
-            hitDmg = Random.Range(1,7);
             StartCoroutine(ChosenDice());
         }
 
@@ -118,6 +119,7 @@ public class DobbelManager : MonoBehaviour
     {
         //Starts rolling the dice
         //1       
+       
         if (rollingDiceBool == true)
         {
             dice.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
@@ -165,27 +167,27 @@ public class DobbelManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f);
         dice.transform.Find("RollingSound").gameObject.GetComponent<AudioSource>().Stop();
-        if (hitDmg == 1 || enemyHitDmg == 1)
+        if (hitDmg == 1 && enemyIsPlaying == false || enemyHitDmg == 1 && enemyIsPlaying == true)
         {
             dice.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         }
-        if(hitDmg == 2 || enemyHitDmg == 2)
+        if(hitDmg == 2 && enemyIsPlaying == false || enemyHitDmg == 2 && enemyIsPlaying == true)
         {
             dice.transform.rotation = Quaternion.Euler(-90.0f, 0.0f, 0.0f);
         }
-        if (hitDmg == 3 || enemyHitDmg == 3)
+        if (hitDmg == 3 && enemyIsPlaying == false || enemyHitDmg == 3 && enemyIsPlaying == true)
         {
             dice.transform.rotation = Quaternion.Euler(180.0f, 90.0f, 90.0f);
         }
-        if (hitDmg == 4 || enemyHitDmg == 4)
+        if (hitDmg == 4 && enemyIsPlaying == false || enemyHitDmg == 4 && enemyIsPlaying == true)
         {
             dice.transform.rotation = Quaternion.Euler(90.0f, 0.0f, 0.0f);
         }
-        if (hitDmg == 5 || enemyHitDmg == 5)
+        if (hitDmg == 5 && enemyIsPlaying == false || enemyHitDmg == 5 && enemyIsPlaying == true)
         {
             dice.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
         }
-        if (hitDmg == 6 || enemyHitDmg == 6)
+        if (hitDmg == 6 && enemyIsPlaying == false || enemyHitDmg == 6 && enemyIsPlaying == true)
         {
             dice.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 180.0f);
         }
@@ -209,6 +211,7 @@ public class DobbelManager : MonoBehaviour
         yield return new WaitForSeconds(4);
         Instantiate(prefabDice, new Vector3(enemyPirate[whichPirate].transform.position.x, enemyPirate[whichPirate].transform.position.y + 4, enemyPirate[whichPirate].transform.position.z), Quaternion.identity);
         dice = GameObject.FindGameObjectWithTag("DobbelSteen");
+        enemyHitDmg = 0;
 
         yield return new WaitForSeconds(0.5f);
         dice.transform.Find("RollingSound").gameObject.GetComponent<AudioSource>().loop = true;
