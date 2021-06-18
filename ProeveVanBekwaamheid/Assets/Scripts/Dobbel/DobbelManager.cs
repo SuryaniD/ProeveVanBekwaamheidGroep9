@@ -95,7 +95,7 @@ public class DobbelManager : MonoBehaviour
             questPlayer.transform.Find("JumpSound").gameObject.GetComponent<AudioSource>().Play();
             rb.AddForce(Vector3.up * 500);
             hitDmg = Random.Range(1,7);
-            StartCoroutine(RotatingDice());
+            StartCoroutine(ChosenDice());
         }
 
         //Lets enemy play after player played
@@ -161,7 +161,7 @@ public class DobbelManager : MonoBehaviour
     }
 
     //Shows whats rolled, Deletes dice and lets other play.
-    IEnumerator RotatingDice()
+    IEnumerator ChosenDice()
     {
         yield return new WaitForSeconds(0.4f);
         dice.transform.Find("RollingSound").gameObject.GetComponent<AudioSource>().Stop();
@@ -169,23 +169,23 @@ public class DobbelManager : MonoBehaviour
         {
             dice.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         }
-        else if(hitDmg == 2 || enemyHitDmg == 2)
+        if(hitDmg == 2 || enemyHitDmg == 2)
         {
             dice.transform.rotation = Quaternion.Euler(-90.0f, 0.0f, 0.0f);
         }
-        else if (hitDmg == 3 || enemyHitDmg == 3)
+        if (hitDmg == 3 || enemyHitDmg == 3)
         {
             dice.transform.rotation = Quaternion.Euler(180.0f, 90.0f, 90.0f);
         }
-        else if (hitDmg == 4 || enemyHitDmg == 4)
+        if (hitDmg == 4 || enemyHitDmg == 4)
         {
             dice.transform.rotation = Quaternion.Euler(90.0f, 0.0f, 0.0f);
         }
-        else if (hitDmg == 5 || enemyHitDmg == 5)
+        if (hitDmg == 5 || enemyHitDmg == 5)
         {
             dice.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
         }
-        else if (hitDmg == 6 || enemyHitDmg == 6)
+        if (hitDmg == 6 || enemyHitDmg == 6)
         {
             dice.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 180.0f);
         }
@@ -235,7 +235,7 @@ public class DobbelManager : MonoBehaviour
 
         enemyHitDmg = Random.Range(1, 7);
         enemyPirate[whichPirate].GetComponent<Rigidbody>().AddForce(Vector3.up * 500); ;
-        StartCoroutine(RotatingDice());
+        StartCoroutine(ChosenDice());
         yield return new WaitForSeconds(2);
         Destroy(dice.gameObject);
         antiRepeatEP = false;

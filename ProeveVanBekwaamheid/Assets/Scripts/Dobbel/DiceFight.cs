@@ -21,9 +21,6 @@ public class DiceFight : MonoBehaviour
     public int playerHealth = 50;
     public int enemyHealth = 6;
 
-    private int hasThrown = 0;
-    private int hasThrownEnemy = 0;
-
     public int piratesDestroyed = 0;
 
     void Start()
@@ -38,37 +35,11 @@ public class DiceFight : MonoBehaviour
         newDmgPlayer = dobbelManager.hitDmg;
         newDmgEnemy = dobbelManager.enemyHitDmg;
 
-        //Checks if new dmg to Enemy is rolled and subtrackts it from Enemy hp
-        if (oldDmgPlayer != newDmgPlayer)
-        {
-            hasThrown++;
-            oldDmgPlayer = newDmgPlayer;
-
-            if (hasThrown >= 1)
-            {
-                hasThrown--;
-                enemyHealth = enemyHealth - oldDmgPlayer;
-            }
-        }
-
-        //Checks if new dmg to player is rolled and subtrackts it from player hp
-        if(oldDmgEnemy != newDmgEnemy)
-        {
-            hasThrownEnemy++;
-            oldDmgEnemy = newDmgEnemy;
-
-            if (hasThrownEnemy >= 1)
-            {
-                hasThrownEnemy--;
-                playerHealth = playerHealth - oldDmgEnemy;
-            }
-        }
-
         //enemy hp is one hp adds it back. adds score and start to walk to next enemy(and plays deathsound)
         if (enemyHealth <= 0)
         {
-            enemyPiratesArray[piratesDestroyed].transform.Find("DeathSound").gameObject.GetComponent<AudioSource>().Play();
             enemyHealth = 6;
+            enemyPiratesArray[piratesDestroyed].transform.Find("DeathSound").gameObject.GetComponent<AudioSource>().Play();
             score.enemyDead++;
             StartCoroutine(WaitForWalk());
         }
@@ -79,6 +50,22 @@ public class DiceFight : MonoBehaviour
             Destroy(playerChar);
         }
 
+        //Checks if new dmg to Enemy is rolled and subtrackts it from Enemy hp
+        if (oldDmgPlayer != newDmgPlayer && newDmgPlayer != 0)
+        {
+            oldDmgPlayer = newDmgPlayer;
+            newDmgPlayer = 0;
+            enemyHealth = enemyHealth - oldDmgPlayer;
+        }
+
+        //Checks if new dmg to player is rolled and subtrackts it from player hp
+        if(oldDmgEnemy != newDmgEnemy && newDmgEnemy != 0)
+        {
+
+            oldDmgEnemy = newDmgEnemy;
+            newDmgEnemy = 0;
+            playerHealth = playerHealth - oldDmgEnemy;
+        }
        
     }
     //Gives player time to walk before next enemy starts rolling
