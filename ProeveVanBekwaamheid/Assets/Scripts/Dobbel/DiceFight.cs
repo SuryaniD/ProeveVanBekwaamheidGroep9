@@ -9,7 +9,6 @@ public class DiceFight : MonoBehaviour
     public DobbelManager dobbelManager;
     public Score score;
 
-    [SerializeField]
     private GameObject[] enemyPiratesArray;
 
     private GameObject playerChar;
@@ -19,14 +18,13 @@ public class DiceFight : MonoBehaviour
     private int newDmgEnemy;
     private int oldDmgEnemy;
 
-    private int playerHealth = 50;
-    private int enemyHealth = 6;
+    public int playerHealth = 50;
+    public int enemyHealth = 6;
 
     private int hasThrown = 0;
     private int hasThrownEnemy = 0;
 
     public int piratesDestroyed = 0;
-
 
     void Start()
     {

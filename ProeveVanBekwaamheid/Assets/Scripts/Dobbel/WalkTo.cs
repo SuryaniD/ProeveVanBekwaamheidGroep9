@@ -20,6 +20,8 @@ public class WalkTo : MonoBehaviour
 
     private float smooth = 1.1f;
 
+    private bool stopWalking = false;
+
     void Start()
     {
         walkSpeed = Speed * Time.deltaTime;
@@ -28,7 +30,17 @@ public class WalkTo : MonoBehaviour
     void Update()
     {
         pdestroyed = diceFight.piratesDestroyed;
-        transform.position = Vector3.MoveTowards(transform.position, wayPoints[pdestroyed].transform.position, walkSpeed);
-        transform.rotation = Quaternion.Slerp(transform.rotation, wayPoints[pdestroyed].transform.rotation, Time.deltaTime * smooth);
+        if(pdestroyed == 4 && stopWalking == false)
+        {
+            stopWalking = true;
+            transform.position = Vector3.MoveTowards(transform.position, wayPoints[3].transform.position, walkSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, wayPoints[3].transform.rotation, Time.deltaTime * smooth);
+        }
+        if (stopWalking == false)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, wayPoints[pdestroyed].transform.position, walkSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, wayPoints[pdestroyed].transform.rotation, Time.deltaTime * smooth);
+        }
+        
     }
 }
