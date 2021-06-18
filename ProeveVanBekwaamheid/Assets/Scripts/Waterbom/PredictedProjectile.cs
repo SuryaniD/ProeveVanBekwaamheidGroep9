@@ -9,16 +9,39 @@ public class PredictedProjectile : MonoBehaviour
     public GameObject predictedPosition;
     public LayerMask layer;
 
+    public Camera downCam;
+    public Camera rightCam;
+    public Camera upCam;
+    public Camera leftCam;
     private Camera cam;
     // Use this for initialization
     void Start()
     {
-        cam = Camera.main;
+        cam = rightCam; 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            cam = downCam;
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            cam = upCam;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            cam = rightCam;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            cam = leftCam;
+        }
 
         fireProjectile();
 
@@ -30,12 +53,12 @@ public class PredictedProjectile : MonoBehaviour
         Ray CamRay = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-
+      
         if (Physics.Raycast(CamRay, out hit, 100f, layer))
         { 
             predictedPosition.SetActive(true);
             //Makes the predictPosition follow the mouse 
-            predictedPosition.transform.position = hit.point + Vector3.up * 0.1f;
+            predictedPosition.transform.position = hit.point + Vector3.up * 1f;
 
             Vector3 Vo = calculateVelocity(hit.point, transform.position, 1f);
             transform.rotation = Quaternion.LookRotation(Vo);

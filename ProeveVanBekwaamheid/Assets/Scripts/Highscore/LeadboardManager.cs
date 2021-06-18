@@ -43,7 +43,7 @@ public class LeadboardManager : MonoBehaviour
     void loadGame()
     {
         // Call scene manager to play a new game
-        SceneManager.LoadScene("CraneFixPrototype");
+        SceneManager.LoadScene("MainMenu");
     }
 
     void saveScore()
