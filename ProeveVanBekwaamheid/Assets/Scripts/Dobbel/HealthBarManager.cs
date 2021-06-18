@@ -31,6 +31,7 @@ public class HealthBarManager : MonoBehaviour
         playerChar = dobbelManager.questPlayer;
     }
 
+    //Repeating Sets hp blocks render false for how much hp it has
     void Update()
     {
         pDestroyed = diceFight.piratesDestroyed;

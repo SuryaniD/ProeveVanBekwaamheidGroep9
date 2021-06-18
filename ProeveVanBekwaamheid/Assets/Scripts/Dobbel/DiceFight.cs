@@ -38,48 +38,50 @@ public class DiceFight : MonoBehaviour
         newDmgPlayer = dobbelManager.hitDmg;
         newDmgEnemy = dobbelManager.enemyHitDmg;
 
+        //Checks if new dmg to Enemy is rolled and subtrackts it from Enemy hp
         if (oldDmgPlayer != newDmgPlayer)
         {
             hasThrown++;
             oldDmgPlayer = newDmgPlayer;
+
+            if (hasThrown >= 1)
+            {
+                hasThrown--;
+                enemyHealth = enemyHealth - oldDmgPlayer;
+            }
         }
 
-
+        //Checks if new dmg to player is rolled and subtrackts it from player hp
         if(oldDmgEnemy != newDmgEnemy)
         {
             hasThrownEnemy++;
             oldDmgEnemy = newDmgEnemy;
+
+            if (hasThrownEnemy >= 1)
+            {
+                hasThrownEnemy--;
+                playerHealth = playerHealth - oldDmgEnemy;
+            }
         }
 
-
-        if(hasThrown >= 1)
-        {
-            hasThrown--;
-
-            enemyHealth = enemyHealth - oldDmgPlayer;
-        }
-
-        if (hasThrownEnemy >= 1)
-        {
-            hasThrownEnemy--;
-
-            playerHealth = playerHealth - oldDmgEnemy;
-        }
-
-        if (playerHealth <= 0)
-        {
-            Destroy(playerChar);
-        }
-
-        if(enemyHealth <= 0)
+        //enemy hp is one hp adds it back. adds score and start to walk to next enemy(and plays deathsound)
+        if (enemyHealth <= 0)
         {
             enemyPiratesArray[piratesDestroyed].transform.Find("DeathSound").gameObject.GetComponent<AudioSource>().Play();
             enemyHealth = 6;
             score.enemyDead++;
             StartCoroutine(WaitForWalk());
         }
+
+        //player hp 0 destroy player
+        if (playerHealth <= 0)
+        {
+            Destroy(playerChar);
+        }
+
        
     }
+    //Gives player time to walk before next enemy starts rolling
     IEnumerator WaitForWalk()
     {
         yield return new WaitForSeconds(2f);

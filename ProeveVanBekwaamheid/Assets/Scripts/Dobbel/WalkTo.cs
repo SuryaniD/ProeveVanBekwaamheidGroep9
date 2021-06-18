@@ -29,6 +29,7 @@ public class WalkTo : MonoBehaviour
     
     void Update()
     {
+        //Move too location and rotate towards, enemy gets destroyed walks to next, when done then stops updating 
         pdestroyed = diceFight.piratesDestroyed;
         if(pdestroyed == 4 && stopWalking == false)
         {

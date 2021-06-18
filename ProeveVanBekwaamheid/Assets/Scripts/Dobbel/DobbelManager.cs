@@ -49,7 +49,7 @@ public class DobbelManager : MonoBehaviour
     {
         //NEDS is always the same as enemyDead score from Score script
         //checks if newscore changed in value then gives throwScore +1 for how manny times u can use the dice
-        //(U can use the dice as many times as u splett a pirate)
+        //(U can use the dice as many times as u splett a pirate in normal game)
         newEnemysDeadScore = score.enemyDead;
         newSQPirateKills = diceFight.piratesDestroyed;
 
@@ -65,6 +65,7 @@ public class DobbelManager : MonoBehaviour
             oldSQPirateKills = newSQPirateKills;
         }
 
+        //when killed last pirate gives ammo to bomb and plays reload sound
         if (newSQPirateKills == 4 && setAmmoSoundOff == false)
         {
             setAmmoSoundOff = true;
@@ -72,7 +73,7 @@ public class DobbelManager : MonoBehaviour
             ammoManager.ammo = ammoManager.ammo + 5;
         }
 
-        //If get input Up spawn and start rolling dice
+        //If get input Up spawn and start rolling dice(coroutine)
         if (Input.GetKeyDown(KeyCode.UpArrow) && rollBool1 == false && throwScore >= 1 && enemyIsPlaying == false)
         {
             rollBool1 = true;
@@ -97,6 +98,7 @@ public class DobbelManager : MonoBehaviour
             StartCoroutine(RotatingDice());
         }
 
+        //Lets enemy play after player played
         if (enemyIsPlaying == true && antiRepeatEP == false)
         {
             antiRepeatEP = true;
@@ -105,8 +107,7 @@ public class DobbelManager : MonoBehaviour
 
     }
 
-    //Moet paar seconden wachten omdat hij anders meteen de 2e input meeneemt
-    //(kan ook niet in rolling dice omdat hij anders de hele tijd aan word gezet per refresh)
+    //waits 0.2 seconds before jump input can be given (player)
     IEnumerator RrollBool2SetTrue()
     {
         yield return new WaitForSeconds(0.2f);
@@ -115,7 +116,7 @@ public class DobbelManager : MonoBehaviour
 
     IEnumerator RollingDice()
     {
-        //Het zijn allemaal if statements zodat het tussen door kan stoppen(als de player input 2 doet)
+        //Starts rolling the dice
         //1       
         if (rollingDiceBool == true)
         {
@@ -159,7 +160,7 @@ public class DobbelManager : MonoBehaviour
         }
     }
 
-    //Laat zien wat je gerolt hebt, delete de dice en herstart het script.
+    //Shows whats rolled, Deletes dice and lets other play.
     IEnumerator RotatingDice()
     {
         yield return new WaitForSeconds(0.4f);
@@ -202,7 +203,7 @@ public class DobbelManager : MonoBehaviour
         
     }
 
-
+    //Lets enemy roll without input Goes to show roll and lets player go roll next
     IEnumerator LetEnemyPlay()
     {
         yield return new WaitForSeconds(4);
