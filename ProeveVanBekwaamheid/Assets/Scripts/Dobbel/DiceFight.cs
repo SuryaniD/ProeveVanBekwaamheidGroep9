@@ -23,6 +23,9 @@ public class DiceFight : MonoBehaviour
 
     public int piratesDestroyed = 0;
 
+    public bool rolledPlayer;
+    public bool rolledEnemy;
+
     void Start()
     {
         enemyPiratesArray = dobbelManager.enemyPirate;
@@ -34,6 +37,9 @@ public class DiceFight : MonoBehaviour
     {
         newDmgPlayer = dobbelManager.hitDmg;
         newDmgEnemy = dobbelManager.enemyHitDmg;
+
+        rolledPlayer = dobbelManager.diceWasRolledPlayer;
+        rolledEnemy = dobbelManager.diceWasRolledEnemy;
 
         //enemy hp is one hp adds it back. adds score and start to walk to next enemy(and plays deathsound)
         if (enemyHealth <= 0)
@@ -51,19 +57,18 @@ public class DiceFight : MonoBehaviour
         }
 
         //Checks if new dmg to Enemy is rolled and subtrackts it from Enemy hp
-        if (oldDmgPlayer != newDmgPlayer && newDmgPlayer != 0)
+        if (rolledPlayer == true)
         {
+            rolledPlayer = false;
             oldDmgPlayer = newDmgPlayer;
-            newDmgPlayer = 0;
             enemyHealth = enemyHealth - oldDmgPlayer;
         }
 
         //Checks if new dmg to player is rolled and subtrackts it from player hp
-        if(oldDmgEnemy != newDmgEnemy && newDmgEnemy != 0)
+        if(rolledEnemy == true)
         {
-
+            rolledEnemy = false;
             oldDmgEnemy = newDmgEnemy;
-            newDmgEnemy = 0;
             playerHealth = playerHealth - oldDmgEnemy;
         }
        

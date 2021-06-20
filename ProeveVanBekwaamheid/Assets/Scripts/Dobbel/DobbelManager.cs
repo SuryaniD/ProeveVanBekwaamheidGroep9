@@ -26,6 +26,9 @@ public class DobbelManager : MonoBehaviour
 
     private bool setAmmoSoundOff = false;
 
+    public bool diceWasRolledPlayer = false;
+    public bool diceWasRolledEnemy = false;
+
     public int timesRolled;
 
     public int hitDmg;
@@ -65,6 +68,16 @@ public class DobbelManager : MonoBehaviour
             oldSQPirateKills = newSQPirateKills;
         }
 
+        if(diceWasRolledPlayer == true)
+        {
+            diceWasRolledPlayer = diceFight.rolledPlayer;
+
+        }
+        if (diceWasRolledEnemy == true)
+        {
+            diceWasRolledEnemy = diceFight.rolledEnemy;
+        }
+
         //when killed last pirate gives ammo to bomb and plays reload sound
         if (newSQPirateKills == 4 && setAmmoSoundOff == false)
         {
@@ -95,6 +108,7 @@ public class DobbelManager : MonoBehaviour
             rollingDiceBool = false;
             questPlayer.transform.Find("JumpSound").gameObject.GetComponent<AudioSource>().Play();
             hitDmg = Random.Range(1, 7);
+            diceWasRolledPlayer = true;
             rb.AddForce(Vector3.up * 500);
             StartCoroutine(ChosenDice());
         }
@@ -237,6 +251,7 @@ public class DobbelManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         enemyHitDmg = Random.Range(1, 7);
+        diceWasRolledEnemy = true;
         enemyPirate[whichPirate].GetComponent<Rigidbody>().AddForce(Vector3.up * 500); ;
         StartCoroutine(ChosenDice());
         yield return new WaitForSeconds(2);
