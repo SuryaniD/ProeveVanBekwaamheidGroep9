@@ -25,7 +25,7 @@ public class HealthBarManager : MonoBehaviour
 
     private int eHealth;
     private int pHealth;
-
+    //Player health needs to be connected to Dexter Herexamen health(no codes leading there yet, will be made if we merged)
     void Start()
     {
         enemyPiratesArray = dobbelManager.enemyPirate;
