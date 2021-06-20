@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DobbelManager : MonoBehaviour
 {
@@ -13,10 +14,11 @@ public class DobbelManager : MonoBehaviour
     [SerializeField]
     private GameObject prefabDice;
     private GameObject dice;
-
-    
     public GameObject questPlayer;
+
     private Rigidbody rb;
+
+    public Text rollsDisplay;
 
     private bool rollBool1 = false;
     private bool rollBool2 = false;
@@ -56,6 +58,9 @@ public class DobbelManager : MonoBehaviour
         //(U can use the dice as many times as u splett a pirate in normal game)
         newEnemysDeadScore = score.enemyDead;
         newSQPirateKills = diceFight.piratesDestroyed;
+
+        //How manny times u can roll displayed here
+        rollsDisplay.text = ("Uses Left: ") + throwScore.ToString();
 
         if (oldEnemysDeadScore != newEnemysDeadScore)
         {

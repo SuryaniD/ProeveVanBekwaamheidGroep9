@@ -42,7 +42,7 @@ public class DiceFight : MonoBehaviour
         rolledPlayer = dobbelManager.diceWasRolledPlayer;
         rolledEnemy = dobbelManager.diceWasRolledEnemy;
 
-        //enemy hp is one hp adds it back. adds score and start to walk to next enemy(and plays deathsound)
+        //enemy hp is one hp adds it back. adds score and start to walk to next enemy(and plays deathsound) also u get an other roll(enemydead++)
         if (enemyHealth <= 0)
         {
             enemyHealth = 6;
