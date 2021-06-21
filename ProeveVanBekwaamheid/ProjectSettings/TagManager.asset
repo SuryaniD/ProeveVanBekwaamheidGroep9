@@ -9,6 +9,9 @@ TagManager:
   - Ground
   - Unchild
   - Enemy
+  - FireSpawnPlace
+  - Fire
+  - FireManager
   layers:
   - Default
   - TransparentFX
