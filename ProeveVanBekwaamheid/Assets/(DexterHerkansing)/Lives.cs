@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Lives : MonoBehaviour
 {
@@ -23,12 +24,12 @@ public class Lives : MonoBehaviour
          var seconds = Mathf.FloorToInt(timer % 60);//Use the euclidean division for the seconds.
 
         //Sets the timeLeft to the right format
-        timerTxt.text = "Time left: " + string.Format("{0:00} : {1:00}", minutes, seconds);
+        timerTxt.text = "Fire Time: " + string.Format("{0:00} : {1:00}", minutes, seconds);
 
         //When health is 0 displays "Game Over" text
         if (health <= 0)
         {
-            healthTxt.text = "Game Over";
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
