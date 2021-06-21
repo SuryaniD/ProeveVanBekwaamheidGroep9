@@ -25,6 +25,10 @@ public class Fires : MonoBehaviour
     {
         //Increases the AmountsHit integer each time the collider is triggerd
         amountsHit++;
+
+        //Decreases the scale
+        this.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
+
         //Debug.Log(amountsHit);
         //This if statement checks if the fire has been hit and has reached the HitTreshold and needs to be extinguished if so it starts the coroutine and resets the timeleft also disables the visual components
         if (amountsHit == hitTreshold)
