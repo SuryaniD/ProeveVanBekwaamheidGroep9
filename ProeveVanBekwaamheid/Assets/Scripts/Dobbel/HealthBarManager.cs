@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBarManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class HealthBarManager : MonoBehaviour
 
     private GameObject playerChar;
 
+    public Text pHealthDisplay;
+
     private int pDestroyed;
 
     private int eHealth;
@@ -36,9 +39,12 @@ public class HealthBarManager : MonoBehaviour
     void Update()
     {
         pDestroyed = diceFight.piratesDestroyed;
-        eHealth = diceFight.enemyHealth; 
+        eHealth = diceFight.enemyHealth;
+        pHealth = diceFight.playerHealth;
 
-         if (eHealth == 1 )
+        pHealthDisplay.text = ("Player Health: ") + pHealth.ToString();
+
+        if (eHealth == 1 )
         {
             if (pDestroyed == 0)
             {
