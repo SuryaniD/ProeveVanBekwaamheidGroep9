@@ -11,6 +11,9 @@ TagManager:
   - Enemy
   - ContainerGrounded
   - Crane
+  - FireSpawnPlace
+  - Fire
+  - FireManager
   layers:
   - Default
   - TransparentFX
