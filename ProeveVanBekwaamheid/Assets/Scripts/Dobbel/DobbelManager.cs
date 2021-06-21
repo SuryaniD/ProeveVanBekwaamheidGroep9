@@ -123,6 +123,8 @@ public class DobbelManager : MonoBehaviour
         if (enemyIsPlaying == true && antiRepeatEP == false)
         {
             antiRepeatEP = true;
+            enemyHitDmg = Random.Range(1, 7);
+            diceWasRolledEnemy = true;
             StartCoroutine(LetEnemyPlay());
         }
 
@@ -231,7 +233,6 @@ public class DobbelManager : MonoBehaviour
         yield return new WaitForSeconds(4);
         Instantiate(prefabDice, new Vector3(enemyPirate[whichPirate].transform.position.x, enemyPirate[whichPirate].transform.position.y + 4, enemyPirate[whichPirate].transform.position.z), Quaternion.identity);
         dice = GameObject.FindGameObjectWithTag("DobbelSteen");
-        enemyHitDmg = 0;
 
         yield return new WaitForSeconds(0.5f);
         dice.transform.Find("RollingSound").gameObject.GetComponent<AudioSource>().loop = true;
@@ -256,8 +257,6 @@ public class DobbelManager : MonoBehaviour
         dice.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 180.0f);
         yield return new WaitForSeconds(0.2f);
 
-        enemyHitDmg = Random.Range(1, 7);
-        diceWasRolledEnemy = true;
         enemyPirate[whichPirate].GetComponent<Rigidbody>().AddForce(Vector3.up * 500); ;
         StartCoroutine(ChosenDice());
         yield return new WaitForSeconds(2);

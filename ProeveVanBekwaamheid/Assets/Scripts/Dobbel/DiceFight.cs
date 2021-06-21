@@ -61,16 +61,14 @@ public class DiceFight : MonoBehaviour
         if (rolledPlayer == true)
         {
             rolledPlayer = false;
-            oldDmgPlayer = newDmgPlayer;
-            enemyHealth = enemyHealth - oldDmgPlayer;
+            StartCoroutine(WaitBeforeDmgE());
         }
 
         //Checks if new dmg to player is rolled and subtrackts it from player hp
         if(rolledEnemy == true)
         {
             rolledEnemy = false;
-            oldDmgEnemy = newDmgEnemy;
-            playerHealth = playerHealth - oldDmgEnemy;
+            StartCoroutine(WaitBeforeDmgP());
         }
        
     }
@@ -80,5 +78,19 @@ public class DiceFight : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(enemyPiratesArray[piratesDestroyed]);
         piratesDestroyed++;
+    }
+
+    //Waits before giving dmg , reason is it lets the Dice roll out
+    IEnumerator WaitBeforeDmgP()
+    {
+        yield return new WaitForSeconds(5.9f);
+        oldDmgEnemy = newDmgEnemy;
+        playerHealth = playerHealth - oldDmgEnemy;
+    }
+    IEnumerator WaitBeforeDmgE()
+    {
+        yield return new WaitForSeconds(0.5f);
+        oldDmgPlayer = newDmgPlayer;
+        enemyHealth = enemyHealth - oldDmgPlayer;
     }
 }
