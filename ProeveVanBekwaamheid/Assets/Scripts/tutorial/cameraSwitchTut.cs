@@ -27,7 +27,7 @@ public class caneraSwitchTut : MonoBehaviour
             cam4.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.U))
         {
             cam1.enabled = false;
             cam2.enabled = true;

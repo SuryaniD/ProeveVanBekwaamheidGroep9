@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ammoManager : MonoBehaviour
 {
-   public static int ammo = 5;
+   public int ammo = 5;
    public Text ammoText;
 
     void Update()
