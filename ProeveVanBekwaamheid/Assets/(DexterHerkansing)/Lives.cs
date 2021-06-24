@@ -29,7 +29,7 @@ public class Lives : MonoBehaviour
         //When health is 0 displays "Game Over" text
         if (health <= 0)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("HighscoreCredits");
         }
     }
 
